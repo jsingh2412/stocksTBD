@@ -2,8 +2,8 @@
 
 const Predictions = () => {
   return (
-    <div className="bg-primary-gray">
-      <h1>dashboard prediciton</h1>
+    <div className="bg-primary-gray w-1/2 h-1/2 m-4">
+      <h1>Predictions</h1>
     </div>
   );
 };
