@@ -11,10 +11,11 @@ module.exports = {
         koho: ["KoHo", "sans-serif"],
       },
       fontSize: {
-        "5xl": "2rem",
+        "5xl": "1.75rem",
       },
       colors: {
         "primary-green": "#587F5C",
+        "primary-gray": "#DFDFDF",
       },
     },
   },

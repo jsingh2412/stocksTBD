@@ -1,12 +1,12 @@
 //Dashboard page
-
-import Header from "@components/Header";
+import Predictions from "@components/Predictions";
+import RootLayout from "./layout";
 
 const DashBoard = () => {
   return (
-    <div>
-      <Header />
-    </div>
+    <RootLayout>
+      <Predictions />
+    </RootLayout>
   );
 };
 

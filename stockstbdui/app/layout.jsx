@@ -1,3 +1,4 @@
+import Header from "@components/Header";
 import "@styles/globals.css";
 
 export const metadata = {
@@ -9,6 +10,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
+        <Header />
         <main className="app">{children}</main>
       </body>
     </html>
