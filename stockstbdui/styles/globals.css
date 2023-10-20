@@ -41,6 +41,10 @@ body {
   @apply text-white font-koho font-black italic;
 }
 
+.basic_text_black {
+  @apply text-black font-koho font-black italic;
+}
+
 /*EXAMPLE TAILWIND UTILITY CLASSES*/
 /* .app {
   @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
