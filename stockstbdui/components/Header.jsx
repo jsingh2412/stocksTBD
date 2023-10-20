@@ -4,8 +4,8 @@ import React from "react";
 const Header = () => {
   return (
     <div className="w-screen bg-primary-green flex items-center p-1">
-      <h1 className="basic_text text-5xl pl-5">stocksTBD</h1>
-      <p className="basic_text text-xl ml-auto pr-5">Log In</p>
+      <h1 className="basic_text_italic text-5xl pl-5">stocksTBD</h1>
+      <p className="basic_text_italic text-xl ml-auto pr-5">Log In</p>
     </div>
   );
 };

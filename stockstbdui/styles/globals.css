@@ -38,10 +38,14 @@ body {
 /* Tailwind Styles */
 
 .basic_text {
+  @apply text-white font-koho font-black;
+}
+
+.basic_text_italic {
   @apply text-white font-koho font-black italic;
 }
 
-.basic_text_black {
+.basic_text_black_italic {
   @apply text-black font-koho font-black italic;
 }
 
