@@ -10,8 +10,10 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main className="app">{children}</main>
+        <main className="app">
+          <Header />
+          {children}
+        </main>
       </body>
     </html>
   );
