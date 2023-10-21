@@ -9,28 +9,28 @@ const Predictions = () => {
       <StockPrediction
         stock_image="/assets/images/apple-logo.svg"
         stock_name="Apple"
-        stock_ticker="aapl"
-        stock_percentage="7.5%"
+        stock_ticker="AAPL"
+        stock_percentage="3.5%"
+        stock_suggestion="sell"
+      />
+      <StockPrediction
+        stock_image="/assets/images/Microsoft-logo.svg"
+        stock_name="Microsoft"
+        stock_ticker="MSFT"
+        stock_percentage="2.7%"
         stock_suggestion="buy"
       />
       <StockPrediction
-        stock_image="/assets/images/apple-logo.svg"
-        stock_name="Apple"
-        stock_ticker="aapl"
-        stock_percentage="7.5%"
-        stock_suggestion="buy"
+        stock_image="/assets/images/amazon-logo.svg"
+        stock_name="Amazon"
+        stock_ticker="AMZN"
+        stock_percentage="1.2%"
+        stock_suggestion="sell"
       />
       <StockPrediction
-        stock_image="/assets/images/apple-logo.svg"
-        stock_name="Apple"
-        stock_ticker="aapl"
-        stock_percentage="7.5%"
-        stock_suggestion="buy"
-      />
-      <StockPrediction
-        stock_image="/assets/images/apple-logo.svg"
-        stock_name="Apple"
-        stock_ticker="aapl"
+        stock_image="/assets/images/meta-logo.svg"
+        stock_name="META"
+        stock_ticker="META"
         stock_percentage="7.5%"
         stock_suggestion="buy"
       />

@@ -16,8 +16,9 @@ module.exports = {
       colors: {
         "primary-green": "#587F5C",
         "secondary-green": "#9db39f",
-        "stock-green": "#0DB432",
+        "stock-green": "#6ed284",
         "news-green": "#6b9d70",
+        "stock-red": "#ff7171",
         "primary-gray": "#DFDFDF",
       },
     },

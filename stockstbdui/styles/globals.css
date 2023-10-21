@@ -25,33 +25,6 @@ body {
   pointer-events: none;
 }
 
-.stocks {
-  z-index: 2;
-  position: absolute;
-}
-
-.temp {
-  position: relative;
-}
-
-.curved-trendline-path {
-  stroke-width: 1; /* Line thickness */
-  fill: transparent;
-}
-
-.stock_color_red {
-  stroke: #fb1818;
-}
-
-.stock_color_green {
-  stroke: #0db432; /* Line color */
-}
-
-svg {
-  width: 100%;
-  height: auto;
-}
-
 @media screen and (max-width: 640px) {
   .main {
     padding: 0;
@@ -87,6 +60,34 @@ svg {
 }
 
 /* Prediction Component */
+
+/* Favorite Component */
+.stocks {
+  z-index: 2;
+  position: absolute;
+}
+
+.temp {
+  position: relative;
+}
+
+.curved-trendline-path {
+  stroke-width: 1; /* Line thickness */
+  fill: transparent;
+}
+
+.stock_color_red {
+  stroke: #fb1818;
+}
+
+.stock_color_green {
+  stroke: #0db432; /* Line color */
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}
 
 /* Sign Up Component */
 
