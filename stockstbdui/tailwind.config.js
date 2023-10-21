@@ -17,6 +17,7 @@ module.exports = {
         "primary-green": "#587F5C",
         "secondary-green": "#9db39f",
         "stock-green": "#0DB432",
+        "news-green": "#6b9d70",
         "primary-gray": "#DFDFDF",
       },
     },
