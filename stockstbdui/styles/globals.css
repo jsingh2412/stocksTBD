@@ -8,6 +8,15 @@
 @tailwind components;
 @tailwind utilities;
 
+.stocks {
+  z-index: 2;
+  position: absolute;
+}
+
+.temp {
+  position: relative;
+}
+
 .curved-trendline-path {
   stroke: #0db432; /* Line color */
   stroke-width: 2; /* Line thickness */
