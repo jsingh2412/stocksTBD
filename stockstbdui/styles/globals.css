@@ -8,9 +8,16 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
-*/
+.curved-trendline-path {
+  stroke: #0db432; /* Line color */
+  stroke-width: 2; /* Line thickness */
+  fill: transparent;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}
 
 html,
 body {

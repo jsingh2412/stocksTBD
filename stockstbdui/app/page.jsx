@@ -7,8 +7,8 @@ const DashBoard = () => {
   return (
     <div className="h-screen flex">
       <Predictions />
-      <Favorites />
       <News />
+      <Favorites />
     </div>
   );
 };
