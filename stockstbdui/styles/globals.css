@@ -8,26 +8,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.stocks {
-  z-index: 2;
-  position: absolute;
-}
-
-.temp {
-  position: relative;
-}
-
-.curved-trendline-path {
-  stroke: #0db432; /* Line color */
-  stroke-width: 2; /* Line thickness */
-  fill: transparent;
-}
-
-svg {
-  width: 100%;
-  height: auto;
-}
-
 html,
 body {
   height: 100vh;
@@ -45,6 +25,33 @@ body {
   pointer-events: none;
 }
 
+.stocks {
+  z-index: 2;
+  position: absolute;
+}
+
+.temp {
+  position: relative;
+}
+
+.curved-trendline-path {
+  stroke-width: 1; /* Line thickness */
+  fill: transparent;
+}
+
+.stock_color_red {
+  stroke: #fb1818;
+}
+
+.stock_color_green {
+  stroke: #0db432; /* Line color */
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
 @media screen and (max-width: 640px) {
   .main {
     padding: 0;
@@ -55,6 +62,10 @@ body {
 
 .basic_text {
   @apply text-white font-koho font-black;
+}
+
+.basic_text_black {
+  @apply text-black font-koho font-black;
 }
 
 .basic_text_italic {

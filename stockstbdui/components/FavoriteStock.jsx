@@ -1,9 +1,11 @@
 import Image from "next/image";
 
 const FavoriteStock = (props) => {
+  const stockColor =
+    props.stock_direction == "up" ? "stock_color_green" : "stock_color_red";
   return (
     <div className="bg-white h-1/6 m-3 trendline flex items-center justify-center temp">
-      <div className="w-1/5 flex justify-start items-center stocks">
+      <div className="w-1/5 flex justify-start items-center stocks left-2">
         <Image
           src={props.stock_image}
           alt={props.stock_name}
@@ -11,12 +13,15 @@ const FavoriteStock = (props) => {
           height={60}
           className="object-contain"
         />
+        <h1 className="basic_text_black text-xl">{props.stock_ticker}</h1>
       </div>
-      <h1 className="stocks">{props.stock_name}</h1>
-      <svg viewBox="10 20 190 100" className="">
+      <p className="stocks right-5 basic_text_black text-lg">
+        {props.stock_price}
+      </p>
+      <svg viewBox="10 23 190 100" className="">
         <path
-          d="M10 80 C 30 50, 50 30, 70 80 S 90 50, 110 80 C 130 110, 150 80, 170 70 S 190 60, 200 80"
-          className="curved-trendline-path"
+          d={props.stock_vector}
+          className={`curved-trendline-path ${stockColor}`}
         />
       </svg>
     </div>
