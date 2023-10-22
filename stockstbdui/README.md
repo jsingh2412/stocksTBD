@@ -13,7 +13,12 @@ pnpm dev
 # or
 bun dev
 ```
-
+if you are getting this error:
+    'next' is not recognized as an internal or external command,
+    operable program or batch file.
+run:
+    npm install next 
+    
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.

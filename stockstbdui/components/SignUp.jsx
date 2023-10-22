@@ -19,7 +19,7 @@ const SignUp = () => {
           type="text"
           id="textMessage"
           placeholder="913-999-9999"
-          className="p-3 basic_text text-lg w-full h-1/6"
+          className="p-3 basic_text_black text-lg w-full h-1/6"
         />
         <label
           htmlFor="email"
@@ -31,7 +31,7 @@ const SignUp = () => {
           type="email"
           id="email"
           placeholder="example@gmail.com"
-          className="p-3 basic_text text-lg w-full h-1/6 "
+          className="p-3 basic_text_black text-lg w-full h-1/6"
         />
 
         <button className="bg-primary-gray w-3/4 basic_text_black text-lg h-1/5 mt-auto mb-2 text-center">
