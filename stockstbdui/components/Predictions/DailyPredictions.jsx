@@ -1,7 +1,7 @@
 //Daily predictions page
 
 const DailyPredictions = () => {
-  return <div>DailyPredictions</div>;
+  return <div>Daily 5Predictions</div>;
 };
 
 export default DailyPredictions;

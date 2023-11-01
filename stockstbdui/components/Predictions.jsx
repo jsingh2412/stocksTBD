@@ -1,11 +1,17 @@
 //Prediction component on dashboard
 
 import StockPrediction from "./Predictions/StockPrediction";
+import Link from "next/link";
 
 const Predictions = () => {
   return (
     <div className="bg-primary-gray w-1/2 h-1/2 m-4 p-4 overflow-hidden">
-      <h1 className="basic_text_black_italic text-2xl pb-2">Predictions</h1>
+      <div className="flex justify-between">
+        <h1 className="basic_text_black_italic text-2xl pb-2">Predictions</h1>
+        <Link href="predictions">
+          <h3>Go to predictions</h3>
+        </Link>
+      </div>
       <StockPrediction
         stock_image="/assets/images/apple-logo.svg"
         stock_name="Apple"
