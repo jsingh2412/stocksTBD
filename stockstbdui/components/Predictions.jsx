@@ -12,13 +12,15 @@ const Predictions = () => {
           <h3>Go to predictions</h3>
         </Link>
       </div>
-      <StockPrediction
-        stock_image="/assets/images/apple-logo.svg"
-        stock_name="Apple"
-        stock_ticker="AAPL"
-        stock_percentage="3.5%"
-        stock_suggestion="sell"
-      />
+      <Link href="defaultstock">
+        <StockPrediction
+          stock_image="/assets/images/apple-logo.svg"
+          stock_name="Apple"
+          stock_ticker="AAPL"
+          stock_percentage="3.5%"
+          stock_suggestion="sell"
+        />
+      </Link>
       <StockPrediction
         stock_image="/assets/images/Microsoft-logo.svg"
         stock_name="Microsoft"

@@ -1,7 +1,7 @@
 //Information about stocks
 
 const Stocks = () => {
-  return <div>Stocks</div>;
+  return <div>Default Stock Page - need to make routing dynamic</div>;
 };
 
 export default Stocks;
