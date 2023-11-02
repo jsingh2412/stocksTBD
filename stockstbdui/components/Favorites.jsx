@@ -37,6 +37,9 @@ const Favorites = () => {
         stock_name="apple"
         stock_direction="up"
       />
+      <div className="flex justify-center">
+        <h3>Add Favorites Image</h3>
+      </div>
     </div>
   );
 };

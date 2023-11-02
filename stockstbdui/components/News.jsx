@@ -4,7 +4,7 @@ import NewsArticle from "./NewsArticle";
 
 const News = () => {
   return (
-    <div className="bg-secondary-green w-1/4 h-75 m-4">
+    <div className="bg-secondary-green w-full h-75">
       <h1 className="basic_text text-2xl p-3">News</h1>
       <NewsArticle
         news_image="/assets/images/news-image.webp"

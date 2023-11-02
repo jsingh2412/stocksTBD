@@ -7,7 +7,9 @@ const Header = () => {
       <Link href=".">
         <h1 className="basic_text_italic text-5xl pl-5">stocksTBD</h1>
       </Link>
-      <p className="basic_text_italic text-xl ml-auto pr-5">Log In</p>
+      <Link href="login" className="ml-auto">
+        <p className="basic_text_italic text-xl pr-5">Log In</p>
+      </Link>
     </div>
   );
 };
