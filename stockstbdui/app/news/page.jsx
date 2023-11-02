@@ -1,7 +1,11 @@
 import NewsPage from "@components/News/NewsPage";
 
 const GenericNewsPage = () => {
-  return <NewsPage />;
+  return (
+    <div className="h-screen bg-secondary-green">
+      <NewsPage />
+    </div>
+  );
 };
 
 export default GenericNewsPage;
