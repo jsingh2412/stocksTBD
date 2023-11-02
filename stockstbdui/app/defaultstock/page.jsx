@@ -3,7 +3,7 @@ import React from "react";
 
 const DefaultStock = () => {
   return (
-    <div>
+    <div className="h-screen bg-secondary-green">
       <Stocks />
     </div>
   );
