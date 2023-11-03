@@ -3,7 +3,8 @@
 const SignUp = () => {
   //Not exactly what i want to do but close!
   const signUpStyle = {
-    minHeight: "500px", // Set your desired minimum width in pixels
+    minHeight: "300px", // Set your desired minimum width in pixels
+    minWidth: "150px",
   };
   return (
     <div className="bg-secondary-green w-1/5 h-2/5 m-4" style={signUpStyle}>

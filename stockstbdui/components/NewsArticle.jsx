@@ -15,7 +15,7 @@ const NewsArticle = (props) => {
           />
         </div>
       </div>
-      <div>
+      <div className="text-center flex-grow basic_text_black">
         <p>{props.news_description}</p>
         <p>source: {props.news_source}</p>
       </div>
