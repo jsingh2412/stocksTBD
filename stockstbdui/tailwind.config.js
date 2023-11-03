@@ -12,6 +12,7 @@ module.exports = {
       },
       fontSize: {
         "5xl": "1.75rem",
+        "7xl": "2.25rem",
       },
       colors: {
         "primary-green": "#587F5C",

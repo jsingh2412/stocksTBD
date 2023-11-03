@@ -89,6 +89,26 @@ svg {
   height: auto;
 }
 
+/*News Component*/
+.title_container {
+  overflow: hidden;
+}
+
+.horizontal_scroll {
+  white-space: nowrap; /* Prevent text from wrapping */ /* Enable horizontal scrolling */
+  max-width: 100%; /* Set a maximum width for the title */
+  animation: scrollLeft 10s linear infinite; /* Adjust the animation duration as needed */
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(20%); /* Start off-screen from the right */
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
 /* Sign Up Component */
 
 /* .form_textarea {
