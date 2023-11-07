@@ -6,10 +6,7 @@ const SignUp = () => {
     minWidth: "150px",
   };
   return (
-    <div
-      className="bg-secondary-green w-1/5 h-1/5 m-4 shadow"
-      style={signUpStyle}
-    >
+    <div className="bg-secondary-green w-3/4 shadow m-3" style={signUpStyle}>
       <h1 className="basic_text text-2xl p-3">Sign up for</h1>
       <div className="flex flex-col p-3 h-4/5 items-center justify-center lg:text-2xl text-xl">
         <div className="flex flex-col">
@@ -41,7 +38,7 @@ const SignUp = () => {
           />
         </div>
 
-        <button className="bg-primary-gray w-1/2 basic_text_black text-lg h-1/5 mt-auto text-center">
+        <button className="bg-primary-gray w-1/2 basic_text_black text-lg mt-5 text-center">
           Join
         </button>
       </div>

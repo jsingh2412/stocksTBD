@@ -8,10 +8,7 @@ const Favorites = () => {
     minWidth: "150px",
   };
   return (
-    <div
-      className="bg-secondary-green w-1/5 h-3/5 m-4 shadow"
-      style={FavoritesStyle}
-    >
+    <div className="bg-secondary-green w-4/5 shadow" style={FavoritesStyle}>
       <h1 className="basic_text text-2xl p-3">Favorites</h1>
       <FavoriteStock
         stock_image="/assets/images/apple-logo.svg"
