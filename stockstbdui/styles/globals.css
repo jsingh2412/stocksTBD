@@ -60,7 +60,58 @@ body {
   @apply mt-16 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
 }
 
-/* Prediction Component */
+/* @media only screen and (min-width: 768px) {
+  .layout {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr;
+    grid-template-areas:
+      "predictions_content predictions_content news_content favorite_content"
+      "predictions_content predictions_content news_content favorite_content"
+      "extra_content extra_content news_content favorite_content"
+      "extra_content extra_content news_content signup_content";
+  }
+} */
+
+/* Dashboard Layout */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 5px; /* Adjust the gap as needed */
+}
+
+.predictions-content {
+  grid-column: span 3;
+  grid-row: span 2;
+  background-color: lightblue; /* For demonstration */
+}
+
+.extra-content {
+  grid-column: span 3;
+  grid-row: 3 / span 2;
+  background-color: lightgreen; /* For demonstration */
+}
+
+.news-content {
+  grid-column: 4;
+  grid-row: span 4;
+  background-color: lightyellow; /* For demonstration */
+}
+
+.favorites-content {
+  grid-column: 5;
+  grid-row: span 3;
+  background-color: lightcoral; /* For demonstration */
+}
+
+.signup-content {
+  grid-column: 5;
+  grid-row: 4;
+  background-color: lightskyblue; /* For demonstration */
+}
 
 /* Favorite Component */
 .stocks {
