@@ -1,12 +1,12 @@
 import Image from "next/image";
 const NewsArticle = (props) => {
   return (
-    <div className="h-2/5 bg-white m-3 mb-5 flex flex-col items-center">
+    <div className="bg-white m-3 mb-5 flex flex-col items-center">
       <div className="bg-news-green w-full h-1/5 text-7xl basic_text title_container">
         <div className="horizontal_scroll">{props.news_title}</div>
       </div>
-      <div className="w-full h-1/2 bg-blue-500">
-        <div className="w-full h-full flex justify-start items-center overflow-hidden">
+      <div className="bg-blue-500">
+        <div className="h-full flex justify-start items-center overflow-hidden">
           <Image
             src={props.news_image}
             alt={props.news_title}

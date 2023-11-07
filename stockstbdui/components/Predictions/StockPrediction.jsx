@@ -2,11 +2,16 @@ import Image from "next/image";
 
 //need to fix responsiveness with height and image leaving the space
 const StockPrediction = (props) => {
+  const stockPredictionStyle = {
+    minHeight: "60px",
+    minWidth: "350px",
+  };
   const stockColor =
     props.stock_suggestion == "buy" ? "bg-stock-green" : "bg-stock-red";
   return (
     <div
       className={`${stockColor} w-90 basic_text h-1/5 flex justify-evenly text-center items-center p-2 m-2`}
+      style={stockPredictionStyle}
     >
       <div className="w-1/5 flex justify-start items-center">
         <Image
