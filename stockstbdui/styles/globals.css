@@ -140,6 +140,20 @@ body {
   text-overflow: ellipsis;
 }
 
+/*Stock Layout*/
+.stock_layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr) repeat(2, minmax(0, 2fr));
+  gap: 10px;
+  height: 100vh;
+}
+
+.stock_basic_info {
+  grid-column: span 2;
+  background-color: red;
+}
+
 /* Favorite Component */
 .stocks {
   z-index: 2;

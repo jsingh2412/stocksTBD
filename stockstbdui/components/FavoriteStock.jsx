@@ -4,7 +4,7 @@ const FavoriteStock = (props) => {
   const stockColor =
     props.stock_direction == "up" ? "stock_color_green" : "stock_color_red";
   return (
-    <div className="bg-white m-3 trendline flex items-center justify-center temp">
+    <div className="bg-white trendline flex items-center justify-center temp">
       <div className=" w-full stocks flex justify-start items-center">
         <div className="w-1/5 flex justify-start items-center pl-2">
           <Image
