@@ -10,7 +10,7 @@ const Predictions = () => {
   };
   return (
     <div
-      className="bg-primary-gray w-full h-1/2 p-4 overflow-hidden"
+      className="bg-primary-gray w-full p-4 overflow-hidden"
       style={predictionStyle}
     >
       <div className="flex justify-between">
