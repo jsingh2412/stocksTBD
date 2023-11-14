@@ -1,3 +1,5 @@
+import LineChart from "@components/Chart";
+
 import NewsPage from "@components/News/NewsPage";
 
 const GenericNewsPage = () => {

@@ -1,9 +1,6 @@
 /*Imports KoHo font-family from google fonts*/
 @import url("https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
-/*Template CSS*/
-/*MOST WON'T BE USED IN STOCKSTBD*/
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,6 +20,10 @@ body {
   justify-content: center;
   padding: 120px 24px 160px 24px;
   pointer-events: none;
+}
+
+.shadow {
+  box-shadow: 4px 10px 4px rgba(0, 0, 0, 0.25);
 }
 
 @media screen and (max-width: 640px) {
@@ -59,7 +60,99 @@ body {
   @apply mt-16 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
 }
 
-/* Prediction Component */
+/* Dashboard Layout */
+.layout {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  height: 150vh;
+}
+
+.predictions-content {
+  grid-column: span 3;
+  grid-row: 1 / span 2;
+  background-color: lightblue;
+}
+
+.extra-content {
+  grid-column: span 3;
+  grid-row: 3 / span 2;
+  background-color: lightgreen; /* For demonstration */
+}
+
+.news-content {
+  grid-column: 4;
+  grid-row: span 4;
+  background-color: lightyellow;
+}
+
+.favorites-content {
+  grid-column: 5;
+  grid-row: span 3;
+  background-color: lightcoral;
+}
+
+.signup-content {
+  grid-column: 5;
+  grid-row: 4;
+  background-color: lightskyblue;
+}
+
+.news_max {
+  max-height: 150vh;
+  overflow: hidden;
+}
+
+.favorites_hidden {
+  max-height: 90%;
+  overflow: hidden;
+}
+
+.favorite-stock-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Adjust the gap as needed */
+  max-width: 100%;
+  max-height: 90%;
+  overflow: auto; /* Add overflow to handle content that exceeds the container */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+
+.max-news {
+  max-height: 150vh; /* Set the maximum height as needed */
+  overflow: auto; /* Or use overflow: hidden; based on your preference for handling overflow */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.max-news::-webkit-scrollbar {
+  display: none;
+}
+
+.description_truncate {
+  max-height: 10vh;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*Stock Layout*/
+.stock_layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr) repeat(2, minmax(0, 2fr));
+  gap: 10px;
+  height: 100vh;
+}
+
+.stock_basic_info {
+  grid-column: span 2;
+  background-color: red;
+}
 
 /* Favorite Component */
 .stocks {
@@ -89,6 +182,13 @@ svg {
   height: auto;
 }
 
+/*Favorite Stock Component Mobile*/
+@media (max-width: 1100px) {
+  .change_row {
+    flex-wrap: wrap;
+  }
+}
+
 /*News Component*/
 .title_container {
   overflow: hidden;
@@ -108,9 +208,3 @@ svg {
     transform: translateX(-200%);
   }
 }
-
-/* Sign Up Component */
-
-/* .form_textarea {
-  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0;
-} */

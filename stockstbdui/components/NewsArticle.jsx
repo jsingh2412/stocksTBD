@@ -1,22 +1,20 @@
 import Image from "next/image";
 const NewsArticle = (props) => {
   return (
-    <div className="h-2/5 bg-white m-3 mb-5 flex flex-col items-center">
-      <div className="bg-news-green w-full h-1/5 text-7xl basic_text title_container">
+    <div className="bg-white flex flex-col items-center mb-4">
+      <div className="bg-news-green w-full text-7xl basic_text title_container pb-2">
         <div className="horizontal_scroll">{props.news_title}</div>
       </div>
-      <div className="bg-blue-500 w-full h-1/3">
-        <div className="w-full h-full flex justify-start items-center overflow-hidden">
-          <Image
-            src={props.news_image}
-            alt={props.news_title}
-            width={500}
-            height={550}
-          />
-        </div>
+      <div className="flex justify-start items-center">
+        <Image
+          src={props.news_image}
+          alt={props.news_title}
+          width={450}
+          height={250}
+        />
       </div>
-      <div className="text-center flex-grow basic_text_black">
-        <p>{props.news_description}</p>
+      <div className="text-center basic_text_black text-sm">
+        <p className="description_truncate">{props.news_description}</p>
         <p>source: {props.news_source}</p>
       </div>
     </div>
