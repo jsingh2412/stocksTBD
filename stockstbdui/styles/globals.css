@@ -144,14 +144,23 @@ body {
 .stock_layout {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: minmax(0, 1fr) repeat(2, minmax(0, 2fr));
+  grid-template-rows: minmax(1fr, 1fr) repeat(2, minmax(2fr, 2fr));
   gap: 10px;
   height: 100vh;
 }
 
 .stock_basic_info {
   grid-column: span 2;
-  background-color: red;
+}
+
+/* Adjust font size for large screens */
+@media (min-width: 480px) {
+  .text-size {
+    font-size: 10vh;
+  }
+  .text-size2 {
+    font-size: 7vh;
+  }
 }
 
 /* Favorite Component */
