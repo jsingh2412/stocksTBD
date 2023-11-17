@@ -53,6 +53,9 @@
     font-size: 19px;
 }
 .forgot-password{
+    display: flex;
+    align-items: center;
+    margin: auto;
     padding-left: 62px;
     margin-top: 27px;
     color: white;
@@ -75,6 +78,19 @@
     height: 60px;
     color: #587F5C;
     background-color: white;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 650;
+    cursor: pointer;
+}
+.submit_gray{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 60px;
+    color: white;
+    background-color: #9db39f;
     border-radius: 50px;
     font-size: 19px;
     font-weight: 650;
