@@ -78,7 +78,6 @@ body {
 .extra-content {
   grid-column: span 3;
   grid-row: 3 / span 2;
-  background-color: lightgreen; /* For demonstration */
 }
 
 .news-content {

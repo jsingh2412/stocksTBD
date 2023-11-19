@@ -1,9 +1,13 @@
+"use client";
+
 import Predictions from "@components/Predictions";
 import Favorites from "@components/Favorites";
 import News from "@components/News";
 import SignUp from "@components/SignUp";
 import Link from "next/link";
 import LineChart from "@components/Chart";
+
+import ParentSize from "@visx/responsive/lib/components/ParentSize";
 
 const data = [
   {
@@ -34,6 +38,20 @@ const data = [
     year: 1978,
     amount: 15.357,
   },
+  {
+    country: "DENMARK",
+    currency: "RDDUSD",
+    type: "RENEWABLE",
+    year: 1989,
+    amount: 18.357,
+  },
+  {
+    country: "Chase",
+    currency: "RDDUSD",
+    type: "RENEWABLE",
+    year: 2010,
+    amount: 15.357,
+  },
 ];
 
 const DashBoard = () => {
@@ -43,7 +61,11 @@ const DashBoard = () => {
         <Predictions />
       </div>
       <div className="extra-content">
-        {/* <LineChart data={data} height={200} width={200} /> */}
+        <ParentSize>
+          {({ width, height }) => (
+            <LineChart data={data} width={width} height={height} />
+          )}
+        </ParentSize>
       </div>
       <div className="news-content">
         <Link href="news">
