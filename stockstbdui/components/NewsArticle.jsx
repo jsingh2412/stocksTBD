@@ -1,3 +1,4 @@
+//a news article component used for the News component.
 import Image from "next/image";
 const NewsArticle = (props) => {
   return (

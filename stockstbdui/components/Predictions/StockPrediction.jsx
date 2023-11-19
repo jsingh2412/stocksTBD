@@ -1,3 +1,5 @@
+//A stock prediction used for the daily predictions component
+//this will eventually use our ML models to generate predictions.
 import Image from "next/image";
 
 //need to fix responsiveness with height and image leaving the space

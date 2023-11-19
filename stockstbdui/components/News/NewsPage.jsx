@@ -1,3 +1,4 @@
+//component used for our news page
 import React from "react";
 
 const NewsPage = () => {

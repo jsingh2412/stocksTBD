@@ -1,4 +1,4 @@
-//News component on dashboard
+//A hard coded news component for the dashboard
 
 import NewsArticle from "./NewsArticle";
 

@@ -1,5 +1,7 @@
+//A component to implement charts within our webapp.
 import React from "react";
 
+//sample data to test graphing
 const data = [
   {
     country: "DENMARK",

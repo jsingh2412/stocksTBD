@@ -1,4 +1,4 @@
-//Sign Up component on dashboard
+//A component to sign up for emails on our dashboard.
 
 const SignUp = () => {
   const signUpStyle = {

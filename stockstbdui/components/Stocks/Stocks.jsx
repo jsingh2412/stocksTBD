@@ -1,4 +1,4 @@
-//Information about stocks
+//Information about stocks, temporarily hardcoded
 import LineChart from "@components/Chart";
 import NewsArticle from "@components/NewsArticle";
 import StockPrediction from "@components/Predictions/StockPrediction";

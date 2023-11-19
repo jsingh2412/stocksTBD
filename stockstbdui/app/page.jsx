@@ -1,3 +1,4 @@
+//The current landing page of our website and home of everything... the dashboard.
 import Predictions from "@components/Predictions";
 import Favorites from "@components/Favorites";
 import News from "@components/News";

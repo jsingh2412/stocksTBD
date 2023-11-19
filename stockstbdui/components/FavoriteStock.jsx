@@ -1,3 +1,4 @@
+//A hard coded implementation showing what a favorite stock would look like.
 import Image from "next/image";
 
 const FavoriteStock = (props) => {
