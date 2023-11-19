@@ -1,5 +1,4 @@
 //Favorites component on dashboard
-
 import FavoriteStock from "./FavoriteStock";
 
 const Favorites = () => {

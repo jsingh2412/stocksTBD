@@ -1,3 +1,4 @@
+//The header of our webapp that will be present on all other pages.
 import Link from "next/link";
 
 //need to make utility classes for text so im not repeating again

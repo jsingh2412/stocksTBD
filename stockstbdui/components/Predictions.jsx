@@ -1,5 +1,4 @@
 //Prediction component on dashboard
-
 import StockPrediction from "./Predictions/StockPrediction";
 import Link from "next/link";
 
