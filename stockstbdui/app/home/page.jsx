@@ -6,10 +6,10 @@ import './home.css';
 const Home = () => {
   return (
     <div>
-        <div className="h-screen bg-secondary-green">
+        <div className="header">
 
         </div>
-        <div className="h-screen bg-primary-green">
+        <div className="aboutContainer">
         
         </div>
         <div className="h-screen bg-secondary-green">

@@ -9,7 +9,7 @@ import './login.css';
 
 const LogIn = () => {
   //used to change states between login/signup
-  const [action,setAction] = useState('Sign Up');
+  const [action,setAction] = useState('Login');
 
   return (
     <div className='container'>

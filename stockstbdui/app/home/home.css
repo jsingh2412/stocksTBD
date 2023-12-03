@@ -1,0 +1,6 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: #9db39f;
+}
