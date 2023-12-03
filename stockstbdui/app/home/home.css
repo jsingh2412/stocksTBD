@@ -14,3 +14,35 @@
     text-align: left;
     font-family: "KoHo";
 }
+.aboutContainer{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: #587F5C;
+}
+.aboutContainer h1{
+    font-size: 3rem;
+    text-align: left;
+    font-family: "KoHo";
+}
+.aboutContainer p1{
+    font-size: 1.2rem;
+    text-align: left;
+    font-family: "KoHo";
+}
+.joinContainer{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: #9db39f;
+}
+.joinContainer h1{
+    font-size: 3rem;
+    text-align: left;
+    font-family: "KoHo";
+}
+.joinContainer p1{
+    font-size: 1.2rem;
+    text-align: left;
+    font-family: "KoHo";
+}
