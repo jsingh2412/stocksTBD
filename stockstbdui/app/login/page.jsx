@@ -26,8 +26,11 @@ const LogIn = () => {
         <div className="input">
         <input type="password" placeholder="********"/>
         </div>
+        {action=="Login"?<div></div>:<div className="input">
+        <input type="confirm password" placeholder="********"/>
+        </div>}
       </div>
-      <div className="forgot-password">Lost Password? C<span> lick here!</span></div>
+      <div className="forgot-password"><span>Lost Password? Click here!</span></div>
       <div className="submit-container">
         <div className={action==="Login"?"submit_gray":"submit"} onClick={()=>{setAction("Sign Up")}}>Sign Up</div>
         <div className={action==="Sign Up"?"submit_gray":"submit"} onClick={()=>{setAction("Login")}}>Login</div>
