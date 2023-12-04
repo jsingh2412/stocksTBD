@@ -7,11 +7,20 @@ from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import SimpleRNN, Dense
 
+#ADDED SPECIFICATIONS TO FIX PROBLEMS WITH READING IN THE COLUMNS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 #Need to load stock data into DataFrame and make sure that it has a "date" column and "close" column 
-data = pd.read_csv('your_stock_data.csv')
+data = pd.read_csv('all_stock_data_final-2013.csv', header=None, encoding='latin-1',
+                   names=['date', 'open', 'high', 'low', 'close', 'volume', 'Name'])
 
+print("TESTING TESTING DOES CODE MAKE IT THIS FAR?????? <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< \n")
+print(data.columns)
+
+#FIXED READING SO THAT IT DOES NOT INCLUDE THE NAME OF THE COLUMN AS PART OF THE DATA "[1:]" <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 #To extract the data from the close column
-prices = data['Close'].values
+prices = data['close'][1:].values
+
+#Converts the values in 'close' to floats
+prices = prices.astype(float)
 
 #Used to normalize the data using MinMax
 scaler = MinMaxScaler()
