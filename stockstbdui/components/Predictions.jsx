@@ -37,20 +37,24 @@ const Predictions = () => {
           stock_suggestion="buy"
         />
       </Link>
-      <StockPrediction
-        stock_image="/assets/images/amazon-logo.svg"
-        stock_name="Amazon"
-        stock_ticker="AMZN"
-        stock_percentage="1.2%"
-        stock_suggestion="sell"
-      />
-      <StockPrediction
-        stock_image="/assets/images/meta-logo.svg"
-        stock_name="META"
-        stock_ticker="META"
-        stock_percentage="7.5%"
-        stock_suggestion="buy"
-      />
+      <Link href={`/stock/AMZN`}>
+        <StockPrediction
+          stock_image="/assets/images/amazon-logo.svg"
+          stock_name="Amazon"
+          stock_ticker="AMZN"
+          stock_percentage="1.2%"
+          stock_suggestion="sell"
+        />
+      </Link>
+      <Link href={`/stock/META`}>
+        <StockPrediction
+          stock_image="/assets/images/meta-logo.svg"
+          stock_name="META"
+          stock_ticker="META"
+          stock_percentage="7.5%"
+          stock_suggestion="buy"
+        />
+      </Link>
     </div>
   );
 };
