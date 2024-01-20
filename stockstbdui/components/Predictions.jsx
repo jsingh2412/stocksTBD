@@ -18,7 +18,8 @@ const Predictions = () => {
           <h3>Go to predictions</h3>
         </Link>
       </div>
-      <Link href="defaultstock">
+      {/* would have these load dynamically and fill information.  */}
+      <Link href={`/stock/AAPL`}>
         <StockPrediction
           stock_image="/assets/images/apple-logo.svg"
           stock_name="Apple"
@@ -27,13 +28,15 @@ const Predictions = () => {
           stock_suggestion="sell"
         />
       </Link>
-      <StockPrediction
-        stock_image="/assets/images/Microsoft-logo.svg"
-        stock_name="Microsoft"
-        stock_ticker="MSFT"
-        stock_percentage="2.7%"
-        stock_suggestion="buy"
-      />
+      <Link href={`/stock/MSFT`}>
+        <StockPrediction
+          stock_image="/assets/images/Microsoft-logo.svg"
+          stock_name="Microsoft"
+          stock_ticker="MSFT"
+          stock_percentage="2.7%"
+          stock_suggestion="buy"
+        />
+      </Link>
       <StockPrediction
         stock_image="/assets/images/amazon-logo.svg"
         stock_name="Amazon"
