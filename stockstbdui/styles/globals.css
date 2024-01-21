@@ -50,17 +50,12 @@ body {
   @apply text-black font-koho font-black italic;
 }
 
-/*EXAMPLE TAILWIND UTILITY CLASSES*/
-/* .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
-} */
-
 /* Header Component */
 .feed {
   @apply mt-16 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
 }
 
-/* Dashboard Layout */
+/*Mobile Dashboard Layout */
 .layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr); /* Single column by default */
@@ -72,9 +67,10 @@ body {
 .news-content,
 .favorites-content,
 .signup-content {
-  grid-column: span 1; /* Each item takes full width on small screens */
+  grid-column: span 1;
 }
 
+/*Dashboard Layout*/
 @media (min-width: 768px) {
   .layout {
     display: grid;
@@ -114,11 +110,13 @@ body {
   }
 }
 
+/*Styling for news page*/
 .news_max {
   max-height: 150vh;
   overflow: hidden;
 }
 
+/*Favorite Container*/
 .favorites_hidden {
   max-height: 90%;
   overflow: hidden;
@@ -128,17 +126,18 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px; /* Adjust the gap as needed */
+  gap: 10px;
   max-width: 100%;
   max-height: 90%;
-  overflow: auto; /* Add overflow to handle content that exceeds the container */
+  overflow: auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;
 }
 
+/*News component styling*/
 .max-news {
-  max-height: 150vh; /* Set the maximum height as needed */
-  overflow: auto; /* Or use overflow: hidden; based on your preference for handling overflow */
+  max-height: 150vh;
+  overflow: auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;
 }

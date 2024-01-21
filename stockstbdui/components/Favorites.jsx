@@ -1,9 +1,10 @@
-//Favorites component on dashboard
 import FavoriteStock from "./FavoriteStock";
 
+//Favorites component that adds user's favorites
+//Add dynamically
 const Favorites = () => {
   const FavoritesStyle = {
-    minHeight: "450px", // Set your desired minimum width in pixels
+    minHeight: "450px",
     minWidth: "150px",
   };
   return (

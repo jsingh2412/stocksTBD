@@ -1,5 +1,4 @@
-import React from "react";
-
+//Component to display News inside of the NewsPage
 const NewsDisplay = (props) => {
   return (
     <div className="bg-primary-gray m-2 flex flex-end">

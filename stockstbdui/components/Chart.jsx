@@ -1,5 +1,3 @@
-import { Group } from "@visx/group";
-import { AxisLeft, AxisBottom } from "@visx/axis";
 import { AreaClosed, Line, Bar } from "@visx/shape";
 import React, { useMemo, useCallback } from "react";
 import { max, extent, bisector } from "@visx/vendor/d3-array";
@@ -16,12 +14,11 @@ import {
   defaultStyles,
 } from "@visx/tooltip";
 
-//temp to try to get more of like the other one
-
-export const background = "#3b6978";
-export const background2 = "#204051";
-export const accentColor = "#edffea";
-export const accentColorDark = "#75daad";
+//Styles for chart
+const background = "#3b6978";
+const background2 = "#204051";
+const accentColor = "#edffea";
+const accentColorDark = "#75daad";
 const tooltipStyles = {
   ...defaultStyles,
   background,
@@ -29,7 +26,8 @@ const tooltipStyles = {
   color: "white",
 };
 
-const LineChart = withTooltip(
+//Chart HOC that displays stock data.
+const Chart = withTooltip(
   ({
     data,
     width,
@@ -66,6 +64,7 @@ const LineChart = withTooltip(
       domain: extent(data, getRD),
     });
 
+    //function to handle tooltip events
     function handleTooltip(event) {
       const { x } = localPoint(event) || { x: 0 };
       const x0 = dateScale.invert(x);
@@ -90,7 +89,7 @@ const LineChart = withTooltip(
     return (
       <div className="shadow">
         <svg width={width} height={height}>
-          {/*Outer rectangle for chart*/}
+          {/*Rectangle for chart*/}
           <rect
             x={0}
             y={0}
@@ -112,6 +111,7 @@ const LineChart = withTooltip(
           <text x="0" y="0" fontSize={12} fill="#000">
             S&P 500
           </text>
+          {/* Adds background rows to chart*/}
           <GridRows
             left={margin.left}
             scale={rdScale}
@@ -121,6 +121,7 @@ const LineChart = withTooltip(
             strokeOpacity={0}
             pointerEvents="none"
           />
+          {/* Adds background columns to chart*/}
           <GridColumns
             top={margin.top}
             scale={dateScale}
@@ -130,6 +131,7 @@ const LineChart = withTooltip(
             strokeOpacity={0.2}
             pointerEvents="none"
           />
+          {/* Adds enclosed space to chart*/}
           <AreaClosed
             data={data}
             x={(d) => dateScale(getDate(d)) ?? 0}
@@ -214,4 +216,4 @@ const LineChart = withTooltip(
   }
 );
 
-export default LineChart;
+export default Chart;

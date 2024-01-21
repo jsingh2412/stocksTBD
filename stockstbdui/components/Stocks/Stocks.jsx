@@ -1,68 +1,26 @@
 "use client";
 
-//Information about stocks, temporarily hardcoded
-import LineChart from "@components/Chart";
+import Chart from "@components/Chart";
 import StockPrediction from "@components/Predictions/StockPrediction";
 import Image from "next/image";
-
 import ParentSize from "@visx/responsive/lib/components/ParentSize";
 import NewsDisplay from "@components/News/NewsDisplay";
-import stockInfo from "@app/fakestockinfo";
-
+import { stockInfo, chartInfo } from "@app/fakeInfo";
 import { useEffect, useState } from "react";
 
-const data = [
-  {
-    year: 1975,
-    month: 3,
-    day: 17,
-    amount: 0.804,
-  },
-  {
-    year: 1976,
-    month: 5,
-    day: 2,
-    amount: 1.35,
-  },
-  {
-    year: 1977,
-    month: 3,
-    day: 17,
-    amount: 7.928,
-  },
-  {
-    year: 1978,
-    month: 3,
-    day: 17,
-    amount: 15.357,
-  },
-  {
-    year: 1989,
-    month: 4,
-    day: 27,
-    amount: 18.357,
-  },
-  {
-    year: 2010,
-    month: 8,
-    day: 12,
-    amount: 15.357,
-  },
-];
+const data = chartInfo;
 
-//will need to look up the stock information then display it
-//else have a loadin component
-
+//Stock component to display basic information, past predicitions, and news articles.
 const Stocks = ({ stock }) => {
   const [stockInformation, setStockInformation] = useState();
 
+  //useEffect to get the dynamically loaded information
   useEffect(() => {
-    const companyInfo = stockInfo.find((company) => company.ticker === stock); // Assuming 'symbol' is the key
+    const companyInfo = stockInfo.find((company) => company.ticker === stock);
     if (companyInfo) {
-      setStockInformation(companyInfo); // Set as an array if necessary
+      setStockInformation(companyInfo);
     }
   }, [stock]);
-  console.log(stockInformation);
   return (
     <div className="stock_layout basic_text_black ">
       {stockInformation && stockInformation.company ? (
@@ -89,7 +47,7 @@ const Stocks = ({ stock }) => {
         <div className="h-64">
           <ParentSize>
             {({ width, height }) => (
-              <LineChart data={data} width={width} height={height} />
+              <Chart data={data} width={width} height={height} />
             )}
           </ParentSize>
         </div>
@@ -99,7 +57,7 @@ const Stocks = ({ stock }) => {
         <div className="h-64 w-100">
           <ParentSize>
             {({ width, height }) => (
-              <LineChart data={data} width={width} height={height} />
+              <Chart data={data} width={width} height={height} />
             )}
           </ParentSize>
         </div>

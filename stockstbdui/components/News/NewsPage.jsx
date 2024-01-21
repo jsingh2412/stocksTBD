@@ -1,7 +1,7 @@
-//component used for our news page
-import React from "react";
 import NewsDisplay from "./NewsDisplay";
 
+//News Page, contains a bunch of different news articles
+//Add dynamic element to load daily
 const NewsPage = () => {
   return (
     <div className="pr-20 pl-20">

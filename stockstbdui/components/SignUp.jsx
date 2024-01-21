@@ -1,4 +1,4 @@
-//A component to sign up for emails on our dashboard.
+//Component to sign up for email and text
 
 const SignUp = () => {
   return (
