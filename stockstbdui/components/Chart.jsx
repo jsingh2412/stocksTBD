@@ -94,7 +94,6 @@ const LineChart = withTooltip(
           <rect
             x={0}
             y={0}
-            rx={14}
             width={width}
             height={height}
             fill={"url(#area-background-gradient)"}

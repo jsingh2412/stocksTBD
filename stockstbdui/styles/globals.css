@@ -145,7 +145,6 @@ body {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: minmax(1fr, 1fr) repeat(2, minmax(2fr, 2fr));
   gap: 10px;
-  height: 100vh;
 }
 
 .stock_basic_info {
