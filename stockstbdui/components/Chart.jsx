@@ -88,7 +88,7 @@ const LineChart = withTooltip(
       });
     }
     return (
-      <div>
+      <div className="shadow">
         <svg width={width} height={height}>
           {/*Outer rectangle for chart*/}
           <rect

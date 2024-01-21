@@ -5,7 +5,7 @@ import Link from "next/link";
 const Predictions = () => {
   return (
     //overflow-hidden
-    <div className="bg-primary-gray h-full p-4 ">
+    <div className="bg-primary-gray h-full p-4 shadow overflow-hidden">
       <div className="flex justify-between">
         <h1 className="basic_text_black_italic text-2xl pb-2">Predictions</h1>
         <Link href="predictions">

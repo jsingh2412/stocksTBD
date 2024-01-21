@@ -70,7 +70,9 @@ const DashBoard = () => {
       <div className="favorites-content">
         <Favorites />
       </div>
-      <div className="signup-content">{/* <SignUp /> */}</div>
+      <div className="signup-content">
+        <SignUp />
+      </div>
     </div>
   );
 };

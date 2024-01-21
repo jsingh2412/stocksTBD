@@ -4,7 +4,7 @@ import NewsArticle from "./NewsArticle";
 
 const News = () => {
   return (
-    <div className="grid grid-cols-1 bg-secondary-green news_max">
+    <div className="grid grid-cols-1 shadow bg-secondary-green news_max">
       <div>
         <h1 className="basic_text text-2xl p-3">News</h1>
       </div>
