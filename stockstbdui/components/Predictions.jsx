@@ -18,7 +18,8 @@ const Predictions = () => {
           <h3>Go to predictions</h3>
         </Link>
       </div>
-      <Link href="defaultstock">
+      {/* would have these load dynamically and fill information.  */}
+      <Link href={`/stock/AAPL`}>
         <StockPrediction
           stock_image="/assets/images/apple-logo.svg"
           stock_name="Apple"
@@ -27,27 +28,33 @@ const Predictions = () => {
           stock_suggestion="sell"
         />
       </Link>
-      <StockPrediction
-        stock_image="/assets/images/Microsoft-logo.svg"
-        stock_name="Microsoft"
-        stock_ticker="MSFT"
-        stock_percentage="2.7%"
-        stock_suggestion="buy"
-      />
-      <StockPrediction
-        stock_image="/assets/images/amazon-logo.svg"
-        stock_name="Amazon"
-        stock_ticker="AMZN"
-        stock_percentage="1.2%"
-        stock_suggestion="sell"
-      />
-      <StockPrediction
-        stock_image="/assets/images/meta-logo.svg"
-        stock_name="META"
-        stock_ticker="META"
-        stock_percentage="7.5%"
-        stock_suggestion="buy"
-      />
+      <Link href={`/stock/MSFT`}>
+        <StockPrediction
+          stock_image="/assets/images/Microsoft-logo.svg"
+          stock_name="Microsoft"
+          stock_ticker="MSFT"
+          stock_percentage="2.7%"
+          stock_suggestion="buy"
+        />
+      </Link>
+      <Link href={`/stock/AMZN`}>
+        <StockPrediction
+          stock_image="/assets/images/amazon-logo.svg"
+          stock_name="Amazon"
+          stock_ticker="AMZN"
+          stock_percentage="1.2%"
+          stock_suggestion="sell"
+        />
+      </Link>
+      <Link href={`/stock/META`}>
+        <StockPrediction
+          stock_image="/assets/images/meta-logo.svg"
+          stock_name="META"
+          stock_ticker="META"
+          stock_percentage="7.5%"
+          stock_suggestion="buy"
+        />
+      </Link>
     </div>
   );
 };

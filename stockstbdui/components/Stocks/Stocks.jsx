@@ -1,8 +1,58 @@
+"use client";
+
 //Information about stocks, temporarily hardcoded
 import LineChart from "@components/Chart";
 import NewsArticle from "@components/NewsArticle";
 import StockPrediction from "@components/Predictions/StockPrediction";
 import Image from "next/image";
+
+import ParentSize from "@visx/responsive/lib/components/ParentSize";
+import NewsDisplay from "@components/News/NewsDisplay";
+
+const data = [
+  {
+    country: "DENMARK",
+    currency: "RDDUSD",
+    type: "RENEWABLE",
+    year: 1975,
+    amount: 0.804,
+  },
+  {
+    country: "DENMARK",
+    currency: "RDDUSD",
+    type: "RENEWABLE",
+    year: 1976,
+    amount: 1.35,
+  },
+  {
+    country: "DENMARK",
+    currency: "RDDUSD",
+    type: "RENEWABLE",
+    year: 1977,
+    amount: 7.928,
+  },
+  {
+    country: "DENMARK",
+    currency: "RDDUSD",
+    type: "RENEWABLE",
+    year: 1978,
+    amount: 15.357,
+  },
+  {
+    country: "DENMARK",
+    currency: "RDDUSD",
+    type: "RENEWABLE",
+    year: 1989,
+    amount: 18.357,
+  },
+  {
+    country: "Chase",
+    currency: "RDDUSD",
+    type: "RENEWABLE",
+    year: 2010,
+    amount: 15.357,
+  },
+];
 
 const Stocks = () => {
   return (
@@ -22,11 +72,23 @@ const Stocks = () => {
       </div>
       <div className="stock_actual">
         <h1 className="text-2xl">Actual</h1>
-        <div>Chart</div>
+        <div className="w-50 h-50">
+          <ParentSize>
+            {({ width, height }) => (
+              <LineChart data={data} width={width} height={height} />
+            )}
+          </ParentSize>
+        </div>
       </div>
       <div className="stock_predicted">
         <h1 className="text-2xl">Predicted</h1>
-        <div>Chart</div>
+        <div className="w-50 h-50">
+          <ParentSize>
+            {({ width, height }) => (
+              <LineChart data={data} width={width} height={height} />
+            )}
+          </ParentSize>
+        </div>
       </div>
       <div className="past_predictions">
         <h1 className="text-2xl">Past predictions</h1>
@@ -54,7 +116,8 @@ const Stocks = () => {
       </div>
       <div className="stock_news">
         <h1 className="text-2xl">News</h1>
-        <NewsArticle />
+        <NewsDisplay />
+        <NewsDisplay />
       </div>
     </div>
   );
