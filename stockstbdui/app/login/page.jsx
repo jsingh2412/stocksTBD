@@ -12,11 +12,11 @@ const LogIn = () => {
   const [action,setAction] = useState('Login');
 
   return (
-    <div className='container'>
-      <div className="header">
-        <div className="text">{action}</div>
+    <div className='flex-col flex m-auto rounded-3xl mt-10 bg-primary-green p-7 max-w-fit'>
+      <div className="flex flex-col items-center gap-1 w-full mt-2">
+        <div className="font-koho font-semibold m-auto text-5xl text-white">{action}</div>
       </div>
-      <div className="inputs">
+      <div className="mt-1 flex flex-col justify-center gap-5">
         {action=="Login"?<div></div>:<div className="input">
         <input type="name" placeholder="Your Name"/>
         </div>}
