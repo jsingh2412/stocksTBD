@@ -3,15 +3,9 @@ import StockPrediction from "./Predictions/StockPrediction";
 import Link from "next/link";
 
 const Predictions = () => {
-  const predictionStyle = {
-    minHeight: "400px",
-    minWidth: "550px",
-  };
   return (
-    <div
-      className="bg-primary-gray w-full p-4 overflow-hidden"
-      style={predictionStyle}
-    >
+    //overflow-hidden
+    <div className="bg-primary-gray h-full p-4 ">
       <div className="flex justify-between">
         <h1 className="basic_text_black_italic text-2xl pb-2">Predictions</h1>
         <Link href="predictions">
