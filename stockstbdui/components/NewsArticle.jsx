@@ -1,5 +1,6 @@
-//a news article component used for the News component.
 import Image from "next/image";
+
+//News Articles to be used inside of the dashboard component.
 const NewsArticle = (props) => {
   return (
     <div className="bg-white flex flex-col items-center mb-4">

@@ -1,9 +1,10 @@
-//Favorites component on dashboard
 import FavoriteStock from "./FavoriteStock";
-
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+//Favorites component that adds user's favorites
+//Add dynamically
 const Favorites = () => {
   const FavoritesStyle = {
-    minHeight: "450px", // Set your desired minimum width in pixels
+    minHeight: "450px",
     minWidth: "150px",
   };
   return (
@@ -70,8 +71,8 @@ const Favorites = () => {
             stock_direction="up"
           />
         </div>
-        <div className="flex flex-1 justify-center items-center overflow-auto">
-          <h3>Add Favorites</h3>
+        <div className="flex flex-1 justify-center items-center overflow-auto text-white cursor-pointer">
+          <AddCircleOutlineIcon />
         </div>
       </div>
     </div>

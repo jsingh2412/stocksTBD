@@ -1,14 +1,14 @@
-//component used for our news page
-import React from "react";
 import NewsDisplay from "./NewsDisplay";
 
+//News Page, contains a bunch of different news articles
+//Add dynamic element to load daily
 const NewsPage = () => {
   return (
-    <div>
-      <h1 className="text-3xl basic_text">News</h1>
-      <h2>December 7th, 2023</h2>
+    <div className="pr-20 pl-20">
+      <h1 className="text-size basic_text">News</h1>
+      <h2 className="text-lg basic_text">December 7th, 2023</h2>
       <NewsDisplay
-        news_image="Components/News/assets/images/sp.jpg"
+        news_image="/assets/images/news-image.webp"
         news_title="Oppenheimer’s Stoltzfus sees stocks bucking drag of high rates"
         news_description="Wall Street’s biggest bull is sticking to his stock-market optimism, even as concerns mount that corporations will eventually buckle under the pressure of higher interest rates."
         news_source="Bloomberg"

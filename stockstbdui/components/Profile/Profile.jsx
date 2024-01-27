@@ -1,6 +1,4 @@
-//component used within our Profile page
-import React from "react";
-
+//Profile Component
 const Profile = () => {
   return (
     <div>Profile</div>

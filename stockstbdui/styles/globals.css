@@ -50,59 +50,73 @@ body {
   @apply text-black font-koho font-black italic;
 }
 
-/*EXAMPLE TAILWIND UTILITY CLASSES*/
-/* .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
-} */
-
 /* Header Component */
 .feed {
   @apply mt-16 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
 }
 
-/* Dashboard Layout */
+/*Mobile Dashboard Layout */
 .layout {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  grid-template-rows: repeat(4, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr); /* Single column by default */
   gap: 10px;
-  height: 150vh;
 }
 
-.predictions-content {
-  grid-column: span 3;
-  grid-row: 1 / span 2;
-  background-color: lightblue;
-}
-
-.extra-content {
-  grid-column: span 3;
-  grid-row: 3 / span 2;
-}
-
-.news-content {
-  grid-column: 4;
-  grid-row: span 4;
-  background-color: lightyellow;
-}
-
-.favorites-content {
-  grid-column: 5;
-  grid-row: span 3;
-  background-color: lightcoral;
-}
-
+.predictions-content,
+.extra-content,
+.news-content,
+.favorites-content,
 .signup-content {
-  grid-column: 5;
-  grid-row: 4;
-  background-color: lightskyblue;
+  grid-column: span 1;
 }
 
+/*Dashboard Layout*/
+@media (min-width: 768px) {
+  .layout {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    height: 150vh;
+  }
+
+  .predictions-content {
+    grid-column: span 3;
+    grid-row: 1 / span 2;
+    background-color: lightblue;
+  }
+
+  .extra-content {
+    grid-column: span 3;
+    grid-row: 3 / span 2;
+  }
+
+  .news-content {
+    grid-column: 4;
+    grid-row: span 4;
+    background-color: lightyellow;
+  }
+
+  .favorites-content {
+    grid-column: 5;
+    grid-row: span 3;
+    background-color: lightcoral;
+  }
+
+  .signup-content {
+    grid-column: 5;
+    grid-row: 4;
+    background-color: lightskyblue;
+  }
+}
+
+/*Styling for news page*/
 .news_max {
   max-height: 150vh;
   overflow: hidden;
 }
 
+/*Favorite Container*/
 .favorites_hidden {
   max-height: 90%;
   overflow: hidden;
@@ -112,17 +126,18 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px; /* Adjust the gap as needed */
+  gap: 10px;
   max-width: 100%;
   max-height: 90%;
-  overflow: auto; /* Add overflow to handle content that exceeds the container */
+  overflow: auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;
 }
 
+/*News component styling*/
 .max-news {
-  max-height: 150vh; /* Set the maximum height as needed */
-  overflow: auto; /* Or use overflow: hidden; based on your preference for handling overflow */
+  max-height: 150vh;
+  overflow: auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;
 }
@@ -145,7 +160,6 @@ body {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: minmax(1fr, 1fr) repeat(2, minmax(2fr, 2fr));
   gap: 10px;
-  height: 100vh;
 }
 
 .stock_basic_info {

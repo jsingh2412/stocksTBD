@@ -1,14 +1,28 @@
-import React from "react";
-
+//Component to display News inside of the NewsPage
 const NewsDisplay = (props) => {
   return (
-    <div className="bg-primary-gray p-4 m-2">
-      <div>
-        <h1>{props.news_title}</h1>
-        <h2>{props.news_type}</h2>
+    <div className="bg-primary-gray m-2 flex flex-end">
+      <div className="p-4 w-2/3 flex-grow">
+        <div className="flex pb-4 justify-between sm:flex-row flex-col">
+          <h1 className="text-lg font-bold">{props.news_title}</h1>
+          <div className="bg-purple-600 pl-10 pr-10 h-1/4">
+            <h2 className="basic_text">{props.news_type}</h2>
+          </div>
+        </div>
+        <p>{props.news_description}</p>
       </div>
-      <p>{props.news_description}</p>
-      <img src={props.news_image} className="h-20" />
+      <div className="w-1/4 hidden sm:block">
+        <img
+          src={props.news_image}
+          alt="News"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+        />
+      </div>
     </div>
   );
 };

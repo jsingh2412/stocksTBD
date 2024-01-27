@@ -1,8 +1,8 @@
-//Daily predictions page
-
 import Link from "next/link";
 import StockPrediction from "./StockPrediction";
 
+//Page to show all company predictions Daily
+//Load dynamically
 const DailyPredictions = () => {
   return (
     <div className="m-20">
