@@ -23,7 +23,7 @@ const LogIn = () => {
         <input type="password" placeholder="********"/>
         </div>
       </div>
-      <div className="forgot-password"><span>Lost Password? Click here!</span></div>
+      <div className="forgot-password"><span>Forgot your password? Click here!</span></div>
       <div className="flex gap-7 m-auto">
         <div className="submit_gray">Login</div>
       </div>
