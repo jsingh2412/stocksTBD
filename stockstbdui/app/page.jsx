@@ -32,7 +32,7 @@ const DashBoard = () => {
         </Link>
       </div>
       <div className="favorites-content">
-        <Favorites />
+        <Favorites height="450px" width="250px"/>
       </div>
       <div className="signup-content">
         <SignUp />
