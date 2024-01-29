@@ -1,64 +1,40 @@
-import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+import numpy as np
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense
 
-#load training file .csv here
-data = pd.read_csv('kaggle-training/all-data.csv', header=None,encoding='latin-1')
-prices = data['Close'].values.reshape(-1, 1)
+#test 2013 csv file
+df = pd.read_csv('all_stock_data_final-2013.csv')
 
-#normalize the data from file
+df['date'] = pd.to_datetime(df['date'])
+data = df[['open', 'high', 'low', 'close', 'volume']].values
 scaler = MinMaxScaler(feature_range=(0, 1))
-prices_scaled = scaler.fit_transform(prices)
+scaled_data = scaler.fit_transform(data)
 
-#create sequences for training the LSTM model
-def create_sequences(data, seq_length):
-    sequences = []
+def makeSequences(data, seq_length):
+    x, y = [], []
     for i in range(len(data) - seq_length):
-        sequence = data[i:i+seq_length]
-        target = data[i+seq_length]
-        sequences.append((sequence, target))
-    return np.array(sequences)
+        seq = data[i:i + seq_length]
+        label = data[i + seq_length, 3] 
+        x.append(seq)
+        y.append(label)
+    return np.array(x), np.array(y)
 
-#define hyperparameters (EDIT THESE LATER MAYBE)
+#determines how long of time to be considered for prediction
 sequence_length = 10
-train_size = int(len(prices_scaled) * 0.80)
-train_data = prices_scaled[:train_size]
 
-#create sequences for training with data and sequence length
-train_sequences = create_sequences(train_data, sequence_length)
+x, y = makeSequences(scaled_data, sequence_length)
 
-#splits the sequences into input features (labeled as X) and target values (labeled as y)
-X_train = np.array([seq[0] for seq in train_sequences])
-y_train = np.array([seq[1] for seq in train_sequences])
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 
-#build the LSTM model
 model = Sequential()
-model.add(LSTM(units=50, return_sequences=True, input_shape=(sequence_length, 1)))
-model.add(LSTM(units=50))
-model.add(Dense(units=1))
+model.add(LSTM(50, activation='relu', input_shape=(sequence_length, 5)))
+model.add(Dense(1))
 model.compile(optimizer='adam', loss='mean_squared_error')
 
-#train the model
-model.fit(X_train, y_train, epochs=10, batch_size=32)
+model.fit(x_train, y_train, epochs=50, batch_size=32, validation_split=0.1)
 
-#make predictions on the test set (EDIT THESE AND CHANGE LATER)
-test_data = prices_scaled[train_size - sequence_length:]
-test_sequences = create_sequences(test_data, sequence_length)
-X_test = np.array([seq[0] for seq in test_sequences])
-predictions = model.predict(X_test)
-
-#inverse transform the predictions to original scale given
-predictions = scaler.inverse_transform(predictions)
-
-#take results and plot them
-plt.figure(figsize=(14, 7))
-plt.plot(data['Date'][train_size + sequence_length:], data['Close'][train_size + sequence_length:], label='Actual Prices')
-plt.plot(data['Date'][train_size + sequence_length:], predictions, label='Predicted Prices')
-plt.title('Stock Price Prediction using LSTM')
-plt.xlabel('Date')
-plt.ylabel('Stock Price')
-plt.legend()
-plt.show()
+loss = model.evaluate(x_test, y_test)
+print(f'Test Loss: {loss}')
