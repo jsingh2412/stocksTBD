@@ -3,7 +3,7 @@ import React from "react";
 const LandingPage = () => {
   return (
     <div className="h-screen">
-      <div className="h-1/3">
+      <div className="h-1/2">
         <div
           className="w-full h-full bg-cover relative"
           style={{
@@ -96,18 +96,30 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-secondary-green h-3/5 text-7xl sm:text-9xl basic_text">
-        Our Misson
+      <div className="bg-secondary-green text-7xl sm:text-9xl basic_text">
+        <div className="pl-4">Our Mission</div>
+        <div className="sm:text-7xl p-20">
+          Our mission is to provide accurate stock predictions on the S&P 500
+          daily. We want to help make people well informed decision with the
+          latest prices, news stories, and estimates.
+        </div>
       </div>
-      <div
-        className="h-3/5 text-7xl sm:text-9xl basic_text"
-        style={{
-          backgroundImage: 'url("/assets/images/phone.jpg")',
-          backgroundSize: "cover",
-          backgroundPosition: "center 61%",
-        }}
-      >
-        Stay Updated
+
+      <div className="h-3/5">
+        <div
+          className="w-full h-full bg-cover relative"
+          style={{
+            backgroundImage: 'url("/assets/images/phone.jpg")',
+            backgroundSize: "cover",
+            backgroundPosition: "center 61%",
+          }}
+        >
+          <div className="bg-black w-full h-full opacity-50 "></div>
+          <div className="basic_text_italic absolute inset-0 flex  flex-col justify-center items-center">
+            <h1 className="text-9xl sm:text-11xl">Stay Updated</h1>
+            <p>Join our text message club to get daily updates!</p>
+          </div>
+        </div>
       </div>
       <div className="bg-primary-green h-1/5 flex justify-center items-center basic_text">
         ©stocksTBD
