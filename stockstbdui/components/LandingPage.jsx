@@ -22,9 +22,9 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-primary-green h-1/5 flex justify-center items-center text-7xl basic_text">
+      {/* <div className="bg-primary-green h-1/5 flex justify-center items-center text-7xl basic_text">
         Daily Predictions
-      </div>
+      </div> */}
       <div className="text-7xl sm:text-9xl basic_text_black flex flex-col justify-center items-center">
         <div className="items-begin w-full pl-4">S&P 500</div>
         <div
