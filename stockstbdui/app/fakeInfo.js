@@ -4,37 +4,34 @@ export const stockInfo = [
     ticker: "AAPL",
     image: "/assets/images/apple-logo.svg",
     company: "apple",
-    prediction: "buy",
+    prediction: "sell",
     percentage: "4.3%",
+  },
+  {
+    ticker: "MSFT",
+    image: "/assets/images/Microsoft-logo.svg",
+    company: "Microsoft",
+    prediction: "buy",
+    percentage: "2.7%",
+  },
+  {
+    ticker: "AMZN",
+    image: "/assets/images/amazon-logo.svg",
+    company: "Amazon",
+    prediction: "sell",
+    percentage: "1.2%",
+  },
+  {
+    ticker: "META",
+    image: "/assets/images/meta-logo.svg",
+    company: "META",
+    prediction: "buy",
+    percentage: "7.5%",
   },
 ];
 
 //Template for chart information
 export const chartInfo = [
-  {
-    year: 1975,
-    month: 3,
-    day: 17,
-    amount: 0.804,
-  },
-  {
-    year: 1976,
-    month: 5,
-    day: 2,
-    amount: 1.35,
-  },
-  {
-    year: 1977,
-    month: 3,
-    day: 17,
-    amount: 7.928,
-  },
-  {
-    year: 1978,
-    month: 3,
-    day: 17,
-    amount: 15.357,
-  },
   {
     year: 1989,
     month: 4,
@@ -45,6 +42,12 @@ export const chartInfo = [
     year: 2010,
     month: 8,
     day: 12,
-    amount: 15.357,
+    amount: 155.357,
+  },
+  {
+    year: 2022,
+    month: 4,
+    day: 5,
+    amount: 237.357,
   },
 ];

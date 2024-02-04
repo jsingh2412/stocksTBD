@@ -49,9 +49,12 @@ const Chart = withTooltip(
     const innerHeight = height - margin.top - margin.bottom;
 
     //accessors
+
     const getRD = (d) => d.amount;
     const getDate = (d) => new Date(d.month, d.day, d.year);
     const bisectDate = bisector((d) => new Date(d.month, d.day, d.year)).left;
+
+    data.sort((a, b) => getDate(a) - getDate(b));
 
     //scales
     const dateScale = scaleTime({
@@ -140,7 +143,7 @@ const Chart = withTooltip(
             strokeWidth={1}
             stroke="url(#area-gradient)"
             fill="url(#area-gradient)"
-            curve={curveMonotoneX}
+            //curve={curveMonotoneX}
           />
           <Bar
             x={margin.left}
