@@ -14,24 +14,93 @@ const LandingPage = () => {
         >
           <div className="bg-black w-full h-full opacity-50 "></div>
           <div className="basic_text_italic absolute inset-0 flex  flex-col justify-center items-center">
-            <h1>stocksTBD</h1>
+            <h1 className="text-9xl sm:text-11xl">stocksTBD</h1>
             <p>daily stock price predictions</p>
-            <button className="bg-red-200">Join</button>
+            <button className="bg-primary-gray p-3 pl-5 pr-5 basic_text_black text-lg mt-2 text-center">
+              Join
+            </button>
           </div>
         </div>
       </div>
-      <div className="bg-primary-green h-1/5 flex justify-center items-center">
+      <div className="bg-primary-green h-1/5 flex justify-center items-center text-7xl basic_text">
         Daily Predictions
       </div>
-      <div className="h-4/5">
-        S&P 500
-        <div>
-          <img src="" alt="" />
+      <div className="text-7xl sm:text-9xl basic_text_black flex flex-col justify-center items-center">
+        <div className="items-begin w-full pl-4">S&P 500</div>
+        <div
+          className="grid grid-cols-3 gap-4 w-1/2"
+          style={{ gridAutoRows: "auto" }}
+        >
+          <div className="col-span-1 flex justify-center items-center flex-grow">
+            <img
+              className="h-1/2"
+              src="/assets/images/apple-logo.svg"
+              alt="apple logo"
+            />
+          </div>
+          <div className="col-span-1 flex justify-center items-center flex-grow">
+            <img
+              className="h-1/2"
+              src="/assets/images/amazon-logo.svg"
+              alt="amazon logo"
+            />
+          </div>
+          <div className="col-span-1 flex justify-center items-center flex-grow">
+            <img
+              className="h-1/2"
+              src="/assets/images/meta-logo.svg"
+              alt="meta logo"
+            />
+          </div>
+          <div className="col-span-1 flex justify-center items-center flex-grow">
+            <img
+              className="h-1/2"
+              src="/assets/images/Microsoft-logo.svg"
+              alt="Microsoft logo"
+            />
+          </div>
+          <div className="col-span-1 flex justify-center items-center flex-grow">
+            <img
+              className="h-1/2"
+              src="/assets/images/apple-logo.svg"
+              alt="apple logo"
+            />
+          </div>
+          <div className="col-span-1 flex justify-center items-center flex-grow">
+            <img
+              className="h-1/2"
+              src="/assets/images/amazon-logo.svg"
+              alt="amazon logo"
+            />
+          </div>
+          <div className="col-span-1 flex justify-center items-center flex-grow">
+            <img
+              className="h-1/2"
+              src="/assets/images/meta-logo.svg"
+              alt="meta logo"
+            />
+          </div>
+          <div className="col-span-1 flex justify-center items-center flex-grow">
+            <img
+              className="h-1/2"
+              src="/assets/images/meta-logo.svg"
+              alt="meta logo"
+            />
+          </div>
+          <div className="col-span-1 flex justify-center items-center flex-grow">
+            <img
+              className="h-1/2"
+              src="/assets/images/amazon-logo.svg"
+              alt="amazon logo"
+            />
+          </div>
         </div>
       </div>
-      <div className="bg-secondary-green h-3/5">Our Misson</div>
+      <div className="bg-secondary-green h-3/5 text-7xl sm:text-9xl basic_text">
+        Our Misson
+      </div>
       <div
-        className="h-3/5"
+        className="h-3/5 text-7xl sm:text-9xl basic_text"
         style={{
           backgroundImage: 'url("/assets/images/phone.jpg")',
           backgroundSize: "cover",
@@ -40,7 +109,9 @@ const LandingPage = () => {
       >
         Stay Updated
       </div>
-      <div className="bg-primary-green h-1/5 ">Footer</div>
+      <div className="bg-primary-green h-1/5 flex justify-center items-center basic_text">
+        ©stocksTBD
+      </div>
     </div>
   );
 };
