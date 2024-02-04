@@ -2,10 +2,10 @@ import FavoriteStock from "./FavoriteStock";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 //Favorites component that adds user's favorites
 //Add dynamically
-const Favorites = () => {
+const Favorites = (height, width) => {
   const FavoritesStyle = {
-    minHeight: "450px",
-    minWidth: "150px",
+    minHeight: height,
+    minWidth: width,
   };
   return (
     <div

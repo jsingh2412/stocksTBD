@@ -13,7 +13,6 @@ module.exports = {
       },
       //custom font sizes
       fontSize: {
-        "5xl": "1.75rem",
         "7xl": "2.25rem",
         "9xl": "3.5rem",
         "11xl": "5rem",

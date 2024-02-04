@@ -36,19 +36,6 @@
     gap:30px;
     margin: 30px auto;
 }
-.submit{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    width: 220px;
-    height: 60px;
-    color: #9db39f;
-    background-color: white;
-    border-radius: 50px;
-    font-size: 19px;
-    font-weight: 650;
-    cursor: pointer;
-}
 .submit_gray{
     display:flex;
     justify-content: center;
