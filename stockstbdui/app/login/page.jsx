@@ -5,7 +5,6 @@
 */
 'use client'
 import React from 'react';
-import './login.css';
 
 const LogIn = () => {
   //used to change states between login/signup
@@ -16,16 +15,16 @@ const LogIn = () => {
         <div className="font-koho font-semibold m-auto text-5xl text-white pb-4">Login</div>
       </div>
       <div className="mt-1 flex flex-col justify-center gap-5">
-        <div className="input">
-        <input type="email" placeholder="example@this.com"/>
+        <div className="flex items-center m-auto w-auto bg-white h-10 rounded-md">
+        <input className="h-12 w-96 bg-transparent border-none outline-none text-lg" type="email" placeholder="example@this.com"/>
         </div>
-        <div className="input">
-        <input type="password" placeholder="********"/>
+        <div className="flex items-center m-auto w-auto bg-white h-10 rounded-md">
+        <input className="h-12 w-96 bg-transparent border-none outline-none text-lg" type="password" placeholder="********"/>
         </div>
       </div>
-      <div className="forgot-password"><span>Forgot your password? Click here!</span></div>
+      <div className="flex items-center m-auto mt-2 text-base font-koho mb-2 text-white"><span>Forgot your password? Click here!</span></div>
       <div className="flex gap-7 m-auto">
-        <div className="submit_gray">Login</div>
+        <div className="flex justify-center items-center w-56 h-16 text-primary-green text-2xl bg-white cursor-pointer rounded-full font-koho font-bold">Login</div>
       </div>
     </div>
     
