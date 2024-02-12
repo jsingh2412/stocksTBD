@@ -1,5 +1,7 @@
 'use client'
-
+/*
+/   This is a set of authentication buttons to help with the login page.
+*/
 import { signIn } from "next-auth/react"
 import Image from "next/image"
 import googleLogo from "@public/assets/images/google_logo.png"
@@ -18,5 +20,5 @@ export function GoogleSignInButton() {
             <Image src={googleLogo} alt="Google Logo" width={20} height={20} />
             <span className="ml-4">Continue with Google</span>
         </button>
-    )
-}
+    );
+};
