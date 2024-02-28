@@ -10,7 +10,7 @@ export const options: NextAuthOptions = {
         
         GoogleProvider({
             profile(profile: GoogleProfile) {
-                console.log(profile.email)
+                console.log(profile)
                 return {
                     ...profile,
                     role: profile.role ?? "user", 
@@ -34,6 +34,7 @@ export const options: NextAuthOptions = {
     },
     pages: {
         signIn: "/login",
-        newUser: "/profile"
+        newUser: "/profile",
+        signOut:"/",
     }
 }
