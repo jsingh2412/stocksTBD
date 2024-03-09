@@ -7,10 +7,9 @@ import { GoogleProfile } from "next-auth/providers/google";
 //        })
 export const options: NextAuthOptions = {
     providers: [
-        
         GoogleProvider({
             profile(profile: GoogleProfile) {
-                console.log(profile)
+                //console.log(profile)
                 return {
                     ...profile,
                     role: profile.role ?? "user", 
@@ -33,7 +32,7 @@ export const options: NextAuthOptions = {
         },
     },
     pages: {
-        signIn: "/login",
+        signIn: "/",
         newUser: "/profile",
         signOut:"/",
     }

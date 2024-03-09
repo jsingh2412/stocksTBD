@@ -13,7 +13,7 @@ import LandingPage from "@components/LandingPage";
 const data = chartInfo;
 
 //Main Dashboard that houses all components for layout.
-const DashBoard = () => {
+const Home = () => {
   return (
     <LandingPage />
     // <div className="layout m-4">
@@ -43,4 +43,4 @@ const DashBoard = () => {
   );
 };
 
-export default DashBoard;
+export default Home;
