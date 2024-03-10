@@ -5,15 +5,82 @@ import StockPrediction from "@components/Predictions/StockPrediction";
 import Image from "next/image";
 import ParentSize from "@visx/responsive/lib/components/ParentSize";
 import NewsDisplay from "@components/News/NewsDisplay";
-import { stockInfo, chartInfo } from "@app/fakeInfo";
+import { stockInfo } from "@app/fakeInfo";
 import { useEffect, useState } from "react";
+const axios = require("axios");
 
-const data = chartInfo;
+const getClosedValues = (data) => {
+  const lows = [];
+  const keys = Object.keys(data);
+  for (let i = 0; i < keys.length; i++) {
+    const dateValue = keys[i];
+    const entry = data[dateValue];
+    console.log(entry);
+    const close = entry["4. close"];
+    console.log(close);
+    const dateObj = {
+      date: dateValue,
+      value: close,
+    };
+    lows.push(dateObj);
+  }
+
+  return lows;
+};
 
 //Stock component to display basic information, past predicitions, and news articles.
 const Stocks = ({ stock }) => {
   const [stockInformation, setStockInformation] = useState();
+  const [data, setData] = useState();
 
+  //need to do a useEffect to get real time stock data
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // const response = await axios.get(
+        //   `http://localhost:3001/alphaData?symbol=${stock}`
+        // );
+        //const dates = Object.entries(response.data["Time Series (Daily)"]);
+        const data = {
+          "2024-02-20": {
+            "1. open": "187.6400",
+            "2. high": "188.7700",
+            "3. low": "183.0600",
+            "4. close": "183.4400",
+            "5. volume": "4247181",
+          },
+          "2024-02-21": {
+            "1. open": "182.5600",
+            "2. high": "183.0300",
+            "3. low": "178.7500",
+            "4. close": "179.7000",
+            "5. volume": "4728473",
+          },
+
+          "2024-02-22": {
+            "1. open": "182.4500",
+            "2. high": "184.5500",
+            "3. low": "181.9300",
+            "4. close": "184.2100",
+            "5. volume": "5078398",
+          },
+          "2024-02-23": {
+            "1. open": "185.6000",
+            "2. high": "185.6000",
+            "3. low": "185.6000",
+            "4. close": "185.6000",
+            "5. volume": "90",
+          },
+        };
+        const closeValues = getClosedValues(data);
+        setData(closeValues);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
   //useEffect to get the dynamically loaded information
   useEffect(() => {
     const companyInfo = stockInfo.find((company) => company.ticker === stock);

@@ -26,6 +26,18 @@ const tooltipStyles = {
   color: "white",
 };
 
+//accessors
+
+const getRD = (d) => {
+  // console.log("this is d.value");
+  // console.log(d.value);
+  return d.value;
+};
+const getDate = (d) => {
+  return new Date(d.date);
+};
+const bisectDate = bisector((d) => new Date(d.date)).left;
+
 //Chart HOC that displays stock data.
 const Chart = withTooltip(
   ({
@@ -39,7 +51,8 @@ const Chart = withTooltip(
     tooltipLeft = 0,
   }) => {
     if (width < 10) return null;
-    const formatDate = timeFormat("%b %d, '%y");
+    const formatDate = timeFormat("%Y-%m-%d");
+
     // define margins from where to start drawing the chart
     const margin = { top: 25, right: 25, bottom: 25, left: 25 };
     // defining inner measurements
@@ -47,14 +60,6 @@ const Chart = withTooltip(
     //bounds
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
-
-    //accessors
-
-    const getRD = (d) => d.amount;
-    const getDate = (d) => new Date(d.month, d.day, d.year);
-    const bisectDate = bisector((d) => new Date(d.month, d.day, d.year)).left;
-
-    data.sort((a, b) => getDate(a) - getDate(b));
 
     //scales
     const dateScale = scaleTime({
@@ -64,9 +69,9 @@ const Chart = withTooltip(
 
     const rdScale = scaleLinear({
       range: [innerHeight + margin.top, margin.top],
-      domain: extent(data, getRD),
+      domain: [0, max(data, getRD)],
+      nice: true,
     });
-
     //function to handle tooltip events
     function handleTooltip(event) {
       const { x } = localPoint(event) || { x: 0 };
@@ -111,9 +116,9 @@ const Chart = withTooltip(
             to={accentColor}
             toOpacity={0.1}
           />
-          <text x="0" y="0" fontSize={12} fill="#000">
+          {/* <text x="0" y="0" fontSize={12} fill="#000">
             S&P 500
-          </text>
+          </text> */}
           {/* Adds background rows to chart*/}
           <GridRows
             left={margin.left}
@@ -137,13 +142,19 @@ const Chart = withTooltip(
           {/* Adds enclosed space to chart*/}
           <AreaClosed
             data={data}
-            x={(d) => dateScale(getDate(d)) ?? 0}
-            y={(d) => rdScale(getRD(d)) ?? 0}
+            x={(d) => {
+              const xValue = dateScale(getDate(d)) ?? 0;
+              return xValue;
+            }}
+            y={(d) => {
+              const yValue = rdScale(getRD(d)) ?? 0;
+              return yValue;
+            }}
             yScale={rdScale}
             strokeWidth={1}
             stroke="url(#area-gradient)"
             fill="url(#area-gradient)"
-            //curve={curveMonotoneX}
+            curve={curveMonotoneX}
           />
           <Bar
             x={margin.left}
