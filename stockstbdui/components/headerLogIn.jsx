@@ -7,10 +7,8 @@ const HeaderLogIn = () => {
   const {data: session} = useSession();
   
   if(session && session.user){
-    console.log("WE IN");
     return (
         <div className="w-screen bg-primary-green flex items-center p-1">
-            <p>{session.user.name}</p>
             <button className="basic_text_italic text-xl pr-5 ml-auto" onClick={() => signOut()}>Sign Out</button>
         </div>
     );
