@@ -5,7 +5,7 @@ import News from "@components/News";
 import SignUp from "@components/SignUp";
 import Link from "next/link";
 import Chart from "@components/Chart";
-import { chartInfo } from "./fakeInfo";
+import { chartInfo } from "../fakeInfo";
 import ParentSize from "@visx/responsive/lib/components/ParentSize";
 import LandingPage from "@components/LandingPage";
 //Assigns data to chartInfo

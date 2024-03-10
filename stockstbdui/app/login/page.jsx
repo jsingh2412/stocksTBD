@@ -18,7 +18,7 @@ const LogIn = () => {
               <div className="flex-col items-center m-auto w-auto">
                 <label htmlFor="password" className="text-sm font-koho text-white mb-0 mt-0">Email</label>
                 <div className="bg-white h-auto rounded-md border-primary-green">
-                  <input id="password" className="h-12 w-96 bg-transparent border-none outline-none text-lg p-2" type="email" placeholder="example@example.com"/>
+                  <input id="email" className="h-12 w-96 bg-transparent border-none outline-none text-lg p-2" type="email" placeholder="example@example.com"/>
                 </div>
               </div>
               <div className="flex-col items-center m-auto w-auto">
