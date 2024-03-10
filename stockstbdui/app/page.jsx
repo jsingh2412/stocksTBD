@@ -75,4 +75,4 @@ const DashBoard = () => {
   );
 };
 
-export default Home;
+export default DashBoard;
