@@ -1,6 +1,8 @@
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
+const bodyParser = require("body-parser");
+const twilio = require("twilio");
 
 const app = express();
 const port = 3001;
@@ -42,22 +44,34 @@ app.get("/data2", async (req, res) => {
   }
 });
 
+// Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Twilio credentials
+const accountSid = "";
+const authToken = "";
+const client = twilio(accountSid, authToken);
+
+// Endpoint to send SMS
+app.post("/send-sms", (req, res) => {
+  const { phoneNumber, message } = req.body;
+
+  client.messages
+    .create({
+      body: message,
+      from: "8669387280",
+      to: phoneNumber,
+    })
+    .then(() => {
+      res.send("SMS sent successfully");
+    })
+    .catch((error) => {
+      console.error("Error sending SMS:", error);
+      res.status(500).send("Failed to send SMS");
+    });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
-// const keys = Object.keys(response.data["Time Series (Daily)"]);
-// const dateObj = response.data["Time Series (Daily)"][keys[0]];
-// const values = Object.values(dateObj);
-// console.log(keys[0]);
-// console.log(values[3]);
-// let buyOrSell = "";
-// if (values[0] < values[3]) {
-//   buyOrSell = "sell";
-// } else {
-//   buyOrSell = "buy";
-// }
-
-// //find matching image.
-
-// console.log(companyList);
