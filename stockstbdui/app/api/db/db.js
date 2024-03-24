@@ -1,6 +1,8 @@
 import mysql from 'mysql2/promise';
-
-export default async function executeQuery(query, data){
+import bcrypt from 'bcrypt';
+// generic execute query function that will be used by every other function
+// creates a connection to the database and executes the inputted query and returns the result.
+export async function executeQuery(query, data){
     try {
         const db = await mysql.createConnection({
             host: 'localhost',
@@ -16,11 +18,20 @@ export default async function executeQuery(query, data){
         return null;
     }
 }
-
+// takes the inputed username and password, using the helper function to help with the security of our software
+// passwords will be hashed and usernames will be sanitized.
 export async function checkUser(username, password){
     try{
-        const response = await executeQuery("SELECT " + username + " FROM users WHERE password=\"" + password + "\"", []);
+        const query = "SELECT COUNT(*) AS count FROM users WHERE username = ? AND password = ?";
+        const [result] = await executeQuery(query, [username, hashedPassword(password)]);
+        return result.count > 0;
     } catch(error){
         throw new Error("No user found.");
     }
+}
+
+async function hashedPassword(plaintext){
+    const salt = await bcrypt.genSalt();
+    const hashedPasswd = await bcrypt.hash(password, salt);
+    return hashedPasswd;
 }

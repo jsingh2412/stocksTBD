@@ -14,10 +14,8 @@ pnpm dev
 bun dev
 ```
 things you may need to install before being able to npm run dev:
-    npm install next 
-    npm install @visx/visx
-    npm install next-auth
-    npm install mysql2
+    npm install next @visx/visx next-auth mysql2 bcrypt
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.

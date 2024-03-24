@@ -1,11 +1,14 @@
 /*
 // This is the page for the login page, appears when clicking login on the top right of our website.
-// Page will handle both logging in and sign up. Auth still needs to be done.
+// The page is responsible for handling login along with redirecting users for oAuth logins.
+// It has a link for sign up at the bottom if the user needs it and the credentials logins
+// are authenticated by a mysql database that is temporarily locally hosted.
 */
 'use client'
 import React from 'react';
 import { GoogleSignInButton } from '@components/AuthButtons';
 import Link from "next/link";
+import checkUser from "@app/api/db/db.js";
 
 const LogIn = () => {
   return (
@@ -30,7 +33,7 @@ const LogIn = () => {
           </div>
           <div className="flex items-center m-auto mt-3 text-base font-koho mb-3 text-white cursor-pointer"><span>Forgot your password? Click here!</span></div>
           <div className="flex gap-7 m-auto">
-              <div className="flex justify-center items-center w-56 h-16 text-primary-green text-2xl bg-white cursor-pointer rounded-lg font-koho font-bold">Login</div>
+              <button onClick={() => checkUser(email.current.value, password.current.value)} className="flex justify-center items-center w-56 h-16 text-primary-green text-2xl bg-white cursor-pointer rounded-lg font-koho font-bold">Login</button>
           </div>
           <div className='flex items-center mt-6'>
           <div className="w-36 border-t border-1 border-white flex-grow mx-2"></div>
