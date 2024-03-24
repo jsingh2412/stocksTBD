@@ -10,6 +10,7 @@ import { GoogleSignInButton } from '@components/AuthButtons';
 import Link from "next/link";
 //import checkUser from "@backend/server/db/db.js";
 //onClick={() => checkUser(email.current.value, password.current.value)}
+
 const LogIn = () => {
   return (
     <div className='w-full flex flex-col items-center justify-center'>

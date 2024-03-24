@@ -2,6 +2,7 @@
 import React from "react";
 import {useSession, signOut} from "next-auth/react";
 import Link from "next/link";
+import headerPic from "@public/assets/images/profile-header.png"
 
 /*
 /   This keeps the Login within the header up to date.
@@ -13,8 +14,13 @@ const HeaderLogIn = () => {
   // Once signed out, the user will return to the login page.
   if(session && session.user){
     return (
-        <div className="w-screen bg-primary-green flex items-center p-1">
-            <button className="basic_text_italic text-xl pr-5 ml-auto" onClick={() => signOut({callbackUrl: "/login"})}>Sign Out</button>
+        <div className="w-screen bg-primary-green flex p-1">
+          <div className="ml-auto flex">
+            <Link className='basic_text_italic text-xl pr-1' href="/profile">
+              <img src={headerPic} alt="Profile" />
+            </Link>
+            <button className="basic_text_italic text-xl pr-5" onClick={() => signOut({callbackUrl: "/login"})}>Sign Out</button>
+          </div>
         </div>
     );
   }
