@@ -9,7 +9,7 @@ const HeaderLogIn = () => {
   if(session && session.user){
     return (
         <div className="w-screen bg-primary-green flex items-center p-1">
-            <button className="basic_text_italic text-xl pr-5 ml-auto" onClick={() => signOut()}>Sign Out</button>
+            <button className="basic_text_italic text-xl pr-5 ml-auto" onClick={() => signOut({callbackUrl: "/login"})}>Sign Out</button>
         </div>
     );
   }

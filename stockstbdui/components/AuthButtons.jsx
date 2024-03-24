@@ -1,14 +1,18 @@
 'use client'
 /*
 /   This is a set of authentication buttons to help with the login page.
+/   This will be used for oAuth authentication, where we need to redirect the user.
 */
 import { signIn } from "next-auth/react"
 import Image from "next/image"
 import googleLogo from "@public/assets/images/google_logo.png"
 
+// The google button uses the pre-existing signIn from next-auth and redirects users
+// to the dashboard if they successfully login
 export function GoogleSignInButton() {
+    //redirects to Google oAuth login
     const handleClick = () => {
-        signIn("google");
+        signIn("google", {callbackUrl: "/dashboard"});
     };
 
     return (
