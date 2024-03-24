@@ -8,8 +8,8 @@
 import React from 'react';
 import { GoogleSignInButton } from '@components/AuthButtons';
 import Link from "next/link";
-import checkUser from "@app/api/db/db.js";
-
+//import checkUser from "@backend/server/db/db.js";
+//onClick={() => checkUser(email.current.value, password.current.value)}
 const LogIn = () => {
   return (
     <div className='w-full flex flex-col items-center justify-center'>
@@ -33,7 +33,7 @@ const LogIn = () => {
           </div>
           <div className="flex items-center m-auto mt-3 text-base font-koho mb-3 text-white cursor-pointer"><span>Forgot your password? Click here!</span></div>
           <div className="flex gap-7 m-auto">
-              <button onClick={() => checkUser(email.current.value, password.current.value)} className="flex justify-center items-center w-56 h-16 text-primary-green text-2xl bg-white cursor-pointer rounded-lg font-koho font-bold">Login</button>
+              <button className="flex justify-center items-center w-56 h-16 text-primary-green text-2xl bg-white cursor-pointer rounded-lg font-koho font-bold">Login</button>
           </div>
           <div className='flex items-center mt-6'>
           <div className="w-36 border-t border-1 border-white flex-grow mx-2"></div>
