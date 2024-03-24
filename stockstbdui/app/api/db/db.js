@@ -19,7 +19,7 @@ export default async function executeQuery(query, data){
 
 export async function checkUser(username, password){
     try{
-        const response = await executeQuery("SELECT" + username + "FROM users WHERE password=\"" + password + "\"", []);
+        const response = await executeQuery("SELECT " + username + " FROM users WHERE password=\"" + password + "\"", []);
     } catch(error){
         throw new Error("No user found.");
     }
