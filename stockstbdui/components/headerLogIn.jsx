@@ -17,7 +17,7 @@ const HeaderLogIn = () => {
         <div className="w-screen bg-primary-green flex p-1">
           <div className="ml-auto flex">
             <Link className='basic_text_italic text-xl pr-1' href="/profile">
-              <img src={headerPic} alt="Profile" />
+              <img src={headerPic} alt="Profile" width={20} height={20}/>
             </Link>
             <button className="basic_text_italic text-xl pr-5" onClick={() => signOut({callbackUrl: "/login"})}>Sign Out</button>
           </div>

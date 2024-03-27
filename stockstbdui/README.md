@@ -14,7 +14,7 @@ pnpm dev
 bun dev
 ```
 things you may need to install before being able to npm run dev:
-    npm install next @visx/visx next-auth mysql2 bcrypt
+    npm install next @visx/visx next-auth mysql2 bcrypt mongoose mongodb
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
