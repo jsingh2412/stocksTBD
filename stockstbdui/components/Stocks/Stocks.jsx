@@ -29,7 +29,7 @@ const getClosedValues = (data) => {
 
 //Stock component to display basic information, past predicitions, and news articles.
 const Stocks = ({ stock }) => {
-  const [stockInformation, setStockInformation] = useState();
+  const [stockInformation, setStockInformation] = useState("");
   const [data, setData] = useState([
     {
       date: "2022-03-15",
@@ -137,31 +137,41 @@ const Stocks = ({ stock }) => {
       <div className="past_predictions sm:pl-20 pl-5">
         <h1 className="text-2xl">Past predictions</h1>
         <StockPrediction
-          stock_image="/assets/images/apple-logo.svg"
-          stock_name="Apple"
-          stock_ticker="AAPL"
+          stock_image={`/assets/images/s&p500images/${stockInformation.image}`}
+          stock_name={stockInformation.company}
+          stock_ticker={stockInformation.ticker}
           stock_percentage="3.5%"
-          stock_suggestion="sell"
+          stock_suggestion="buy"
         />
         <StockPrediction
-          stock_image="/assets/images/apple-logo.svg"
-          stock_name="Apple"
-          stock_ticker="AAPL"
-          stock_percentage="3.5%"
-          stock_suggestion="sell"
+          stock_image={`/assets/images/s&p500images/${stockInformation.image}`}
+          stock_name={stockInformation.company}
+          stock_ticker={stockInformation.ticker}
+          stock_percentage="7.5%"
+          stock_suggestion="buy"
         />
         <StockPrediction
-          stock_image="/assets/images/apple-logo.svg"
-          stock_name="Apple"
-          stock_ticker="AAPL"
-          stock_percentage="3.5%"
+          stock_image={`/assets/images/s&p500images/${stockInformation.image}`}
+          stock_name={stockInformation.company}
+          stock_ticker={stockInformation.ticker}
+          stock_percentage="4.5%"
           stock_suggestion="sell"
         />
       </div>
       <div className="stock_news sm:pr-20 pr-5">
         <h1 className="text-2xl">News</h1>
-        <NewsDisplay />
-        <NewsDisplay />
+        <NewsDisplay
+          news_title={`News related to ${stockInformation.company}`}
+          news_description="Description for this news article"
+          news_type="Fiance"
+          news_image="/assets/images/news-image.webp"
+        />
+        <NewsDisplay
+          news_title={`News related to ${stockInformation.company}`}
+          news_description="Description for this news article"
+          news_type="Fiance"
+          news_image="/assets/images/news-image.webp"
+        />
       </div>
     </div>
   );

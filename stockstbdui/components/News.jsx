@@ -13,7 +13,7 @@ const News = () => {
           <NewsArticle
             news_image="/assets/images/news-image.webp"
             news_title="Stock market today: Wall Street closes lower, giving S&P 500 another losing week"
-            news_description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            news_description="The missing article is attributed to Evan Gershkovich, a correspondent for the Journal who was detained by Russian security forces during a reporting trip a year ago today. His imprisonment was made under accusations of espionage—a charge that’s strongly denied by the Journal and the U.S. government. During his 12 months behind bars"
             news_source="AP NEWS"
             news_type="finance"
           />
