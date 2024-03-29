@@ -1,0 +1,77 @@
+const express = require('express');
+const { spawn } = require('child_process');
+const mongoose = require('mongoose');
+
+const app = express();
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => console.log('Connected to MongoDB'))
+.catch(err => console.error('Error connecting to MongoDB:', err));
+
+// Define a Mongoose schema
+const resultSchema = new mongoose.Schema({
+    output: String,
+});
+
+const Result = mongoose.model('Result', resultSchema);
+
+// Define a route to execute the Python script
+app.get('/run-python', (req, res) => {
+    const pythonProcess = spawn('python', ['hello.py']);
+    let pythonOutput = '';
+
+    // Handle output from the Python script
+    pythonProcess.stdout.on('data', (data) => {
+        pythonOutput += data.toString();
+        console.log(`Python stdout: ${data}`);
+    });
+
+    pythonProcess.stderr.on('data', (data) => {
+        console.error(`Python stderr: ${data}`);
+        // Send an error response to the client
+        res.status(500).send('Error executing Python script.');
+    });
+
+    pythonProcess.on('close', (code) => {
+        console.log(`Python process exited with code ${code}`);
+        console.log(`Python output: ${pythonOutput}`);
+
+        // Create a new document with the output
+        const result = new Result({ output: pythonOutput });
+
+        // Save the document to the database
+        result.save()
+            .then(() => {
+                console.log('Result saved to database');
+                // Send the output of the Python script in the response
+                res.send(pythonOutput);
+            })
+            .catch(err => {
+                console.error('Error saving result to database:', err);
+                // Send an error response to the client
+                res.status(500).send('Error saving result to database.');
+            });
+    });
+});
+// Define a route for the root URL
+app.get('/', (req, res) => {
+    const pythonProcess = spawn('python', ['hello.py']);
+    let pythonOutput = '';
+
+    // Handle output from the Python script
+    pythonProcess.stdout.on('data', (data) => {
+        pythonOutput += data.toString();
+        console.log(`Python stdout: ${data}`);
+    });
+    res.send(pythonOutput);
+});
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
