@@ -3,8 +3,8 @@ import GoogleProvider from "next-auth/providers/google"
 import CredentialsProvider from "next-auth/providers/credentials";
 import { GoogleProfile } from "next-auth/providers/google";
 import { connectMongoDB } from "@backend/server/db/mongodb";
-import User from "@backend/server/models/user";
-import bcrypt from "bcrypt";
+import User from "mongoose";
+//import bcrypt from "bcrypt";
 
 export const options = {
     providers: [
@@ -27,7 +27,7 @@ export const options = {
                         return null;
                     }
 
-                    const passwordsMatch = await bcrypt.compare(password, user.password);
+                    const passwordsMatch = (password == user.password);
 
                     if(!passwordsMatch){
                         return null;

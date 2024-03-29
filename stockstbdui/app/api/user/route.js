@@ -1,5 +1,5 @@
 import { connectMongoDB } from "@/backend/server/db/mongodb";
-import User from "@/backend/server/models/user";
+import User from "mongoose";
 import { NextResponse } from "next/server";
 
 export async function POST(request){
