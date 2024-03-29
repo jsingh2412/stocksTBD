@@ -40,9 +40,9 @@ const News = () => {
         </div>
         <div className="flex-1">
           <NewsArticle
-            news_image="/assets/images/sp.jpg"
-            news_title="Oppenheimer’s Stoltzfus sees stocks bucking drag of high rates"
-            news_description="Wall Street’s biggest bull is sticking to his stock-market optimism, even as concerns mount that corporations will eventually buckle under the pressure of higher interest rates."
+            news_image="/assets/images/guy.webp"
+            news_title="Stock market basics: 9 tips for beginners"
+            news_description="News shows, Hollywood films, and TV all assume that you know what the stock market is and how it works. Everyone knows that you can make a lot of money in the stock market if you know what you’re doing, but beginners don’t often understand how the market works and exactly why stocks go up and down. Here’s what you need to know about the stock market before you start investing."
             news_source="Bloomberg"
             news_type="finance "
           />

@@ -23,9 +23,6 @@ const DailyPredictions = () => {
     <div className="m-20">
       <h1 className="text-3xl basic_text_black">September 26th</h1>
       <h3 className="text-2xl basic_text_black">Predictions</h3>
-      <Link href="/predictions/filter">
-        <h5>Go to filter page</h5>
-      </Link>
       {stockComponents}
     </div>
   );

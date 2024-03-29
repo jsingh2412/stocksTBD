@@ -5,22 +5,21 @@ import StockPrediction from "@components/Predictions/StockPrediction";
 import Image from "next/image";
 import ParentSize from "@visx/responsive/lib/components/ParentSize";
 import NewsDisplay from "@components/News/NewsDisplay";
-import { stockInfo } from "@app/fakeInfo";
+import { stockInfo, allStocks } from "@app/fakeInfo";
 import { useEffect, useState } from "react";
 const axios = require("axios");
+import { connectMongoDB } from "@/backend/server/db/mongodb";
+//Need to add Results
+//import Results from "@/backend/server/models/results";
 
 const getClosedValues = (data) => {
   const lows = [];
-  const keys = Object.keys(data);
-  for (let i = 0; i < keys.length; i++) {
-    const dateValue = keys[i];
-    const entry = data[dateValue];
-    console.log(entry);
-    const close = entry["4. close"];
-    console.log(close);
+  for (let i = 0; i < data.length; i++) {
+    const entryDate = data[i][0];
+    const closePrice = data[i][1]["4. close"];
     const dateObj = {
-      date: dateValue,
-      value: close,
+      date: entryDate,
+      value: closePrice,
     };
     lows.push(dateObj);
   }
@@ -31,48 +30,51 @@ const getClosedValues = (data) => {
 //Stock component to display basic information, past predicitions, and news articles.
 const Stocks = ({ stock }) => {
   const [stockInformation, setStockInformation] = useState();
-  const [data, setData] = useState();
+  const [data, setData] = useState([
+    {
+      date: "2022-03-15",
+      value: "3000",
+    },
+    {
+      date: "2022-03-16",
+      value: "2000",
+    },
+    {
+      date: "2022-03-17",
+      value: "4000",
+    },
+  ]);
+  const [prediction, setPrediction] = useState(100.19);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       // Connect to MongoDB
+  //       await connectMongoDB();
+
+  //       // Query the database to find the document where the ticker is equal to "AAPL"
+  //       const result = await Results.findOne({ ticker: `${stock}` });
+
+  //       // Extract the data you need from the result
+  //       setPrediciton(result);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
 
   //need to do a useEffect to get real time stock data
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const response = await axios.get(
-        //   `http://localhost:3001/alphaData?symbol=${stock}`
-        // );
-        //const dates = Object.entries(response.data["Time Series (Daily)"]);
-        const data = {
-          "2024-02-20": {
-            "1. open": "187.6400",
-            "2. high": "188.7700",
-            "3. low": "183.0600",
-            "4. close": "183.4400",
-            "5. volume": "4247181",
-          },
-          "2024-02-21": {
-            "1. open": "182.5600",
-            "2. high": "183.0300",
-            "3. low": "178.7500",
-            "4. close": "179.7000",
-            "5. volume": "4728473",
-          },
-
-          "2024-02-22": {
-            "1. open": "182.4500",
-            "2. high": "184.5500",
-            "3. low": "181.9300",
-            "4. close": "184.2100",
-            "5. volume": "5078398",
-          },
-          "2024-02-23": {
-            "1. open": "185.6000",
-            "2. high": "185.6000",
-            "3. low": "185.6000",
-            "4. close": "185.6000",
-            "5. volume": "90",
-          },
-        };
-        const closeValues = getClosedValues(data);
+        const response = await axios.get(
+          `http://localhost:3001/alphaData?symbol=${stock}`
+        );
+        const dates = Object.entries(response.data["Time Series (Daily)"]);
+        const closeValues = getClosedValues(dates);
+        closeValues.sort((a, b) => new Date(a.date) - new Date(b.date));
         setData(closeValues);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -83,7 +85,7 @@ const Stocks = ({ stock }) => {
   }, []);
   //useEffect to get the dynamically loaded information
   useEffect(() => {
-    const companyInfo = stockInfo.find((company) => company.ticker === stock);
+    const companyInfo = allStocks.find((company) => company.ticker === stock);
     if (companyInfo) {
       setStockInformation(companyInfo);
     }
@@ -96,12 +98,15 @@ const Stocks = ({ stock }) => {
             <h1 className="text-size">{stockInformation.ticker}</h1>
             <h2 className="text-size2">{stockInformation.company}</h2>
           </div>
+          <div className="sm:text-7xl text-2xl pr-5 basic_text">
+            Prediction: {prediction}
+          </div>
           <div className="sm:pr-20 pr-5">
             <Image
-              width={100}
-              height={100}
+              width={200}
+              height={200}
               alt="company logo"
-              src={stockInformation.image}
+              src={`/assets/images/s&p500images/${stockInformation.image}`}
             />
           </div>
         </div>

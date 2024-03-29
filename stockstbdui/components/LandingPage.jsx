@@ -34,56 +34,56 @@ const LandingPage = () => {
           <div className="col-span-1 flex justify-center items-center flex-grow">
             <img
               className="h-1/2"
-              src="/assets/images/apple-logo.svg"
+              src="/assets/images/s&p500images/apple.svg"
               alt="apple logo"
             />
           </div>
           <div className="col-span-1 flex justify-center items-center flex-grow">
             <img
               className="h-1/2"
-              src="/assets/images/amazon-logo.svg"
+              src="/assets/images/s&p500images/american-express.svg"
               alt="amazon logo"
             />
           </div>
           <div className="col-span-1 flex justify-center items-center flex-grow">
             <img
               className="h-1/2"
-              src="/assets/images/meta-logo.svg"
+              src="/assets/images/s&p500images/att.svg"
               alt="meta logo"
             />
           </div>
           <div className="col-span-1 flex justify-center items-center flex-grow">
             <img
               className="h-1/2"
-              src="/assets/images/Microsoft-logo.svg"
+              src="/assets/images/s&p500images/3m.svg"
               alt="Microsoft logo"
             />
           </div>
           <div className="col-span-1 flex justify-center items-center flex-grow">
             <img
               className="h-1/2"
-              src="/assets/images/apple-logo.svg"
+              src="/assets/images/s&p500images/cintas.svg"
               alt="apple logo"
             />
           </div>
           <div className="col-span-1 flex justify-center items-center flex-grow">
             <img
               className="h-1/2"
-              src="/assets/images/amazon-logo.svg"
+              src="/assets/images/s&p500images/costco.svg"
               alt="amazon logo"
             />
           </div>
           <div className="col-span-1 flex justify-center items-center flex-grow">
             <img
               className="h-1/2"
-              src="/assets/images/meta-logo.svg"
+              src="/assets/images/s&p500images/hp.svg"
               alt="meta logo"
             />
           </div>
           <div className="col-span-1 flex justify-center items-center flex-grow">
             <img
               className="h-1/2"
-              src="/assets/images/meta-logo.svg"
+              src="/assets/images/s&p500images/tesla.svg"
               alt="meta logo"
             />
           </div>

@@ -40,11 +40,11 @@ const Predictions = () => {
           stock_suggestion="sell"
         />
       </Link>
-      <Link href={`/stock/META`}>
+      <Link href={`/stock/EFX`}>
         <StockPrediction
-          stock_image="/assets/images/meta-logo.svg"
-          stock_name="META"
-          stock_ticker="META"
+          stock_image="/assets/images/s&p500images/equifax.svg"
+          stock_name="EQUIFAX"
+          stock_ticker="EFX"
           stock_percentage="7.5%"
           stock_suggestion="buy"
         />
