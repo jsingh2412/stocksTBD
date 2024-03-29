@@ -4,14 +4,46 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { GoogleProfile } from "next-auth/providers/google";
 import { connectMongoDB } from "@backend/server/db/mongodb";
 import User from "@backend/server/models/user";
+import bcrypt from "bcrypt";
 
-const options = {
+export const options = {
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        }),
+        CredentialsProvider({
+            name: "credentials",
+            credentials: {},
+
+            async authorize(credentials){
+                const {email, password} = credentials;
+
+                try {
+                    await connectMongoDB();
+                    const user = await User.findOne({email});
+
+                    if(!user) {
+                        return null;
+                    }
+
+                    const passwordsMatch = await bcrypt.compare(password, user.password);
+
+                    if(!passwordsMatch){
+                        return null;
+                    }
+                    return user;
+                } catch{
+
+                }
+
+            }
         })
     ],
+    session:{
+        strategy: "jwt",
+    },
+    secret: process.env.NEXTAUTH_SECRET,
     callbacks: {
         async session ({session,token}){
             if (session?.user) session.user.role = token.role
