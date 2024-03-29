@@ -30,7 +30,7 @@ current_datetime = datetime.now().replace(hour=0, minute=0, second=0, microsecon
 start_date = current_datetime - timedelta(days=60) #date 60 days prior
 
 pulled_data = get_data(ticker,start_date,current_datetime) #get data from start date
-print(pulled_data)
+#print(pulled_data)
 
 #reverse dataframe
 try:
