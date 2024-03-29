@@ -12,7 +12,7 @@ app.use(cors());
 
 const alphaVantageEndpoint = "https://www.alphavantage.co/query";
 const func = "TIME_SERIES_DAILY";
-const alphaKey = "";
+const alphaKey = process.env.ALPHA_CLIENT_SECRET;
 
 app.get("/alphaData", async (req, res) => {
   try {
@@ -25,14 +25,15 @@ app.get("/alphaData", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+console.log(alphaKey);
 
 const endpoint = "https://api.stlouisfed.org/fred/series/observations";
 const seriesId = "SP500";
-const apiKey = "";
+const apiKey = process.env.REACT_APP_S_P_CLIENT_SECRET;
 const fileType = "json";
 const observationStart = "2022-03-17";
 const observationEnd = "2023-03-17";
-
+console.log(apiKey);
 const apiUrl = `${endpoint}?series_id=${seriesId}&api_key=${apiKey}&file_type=${fileType}&observation_start=${observationStart}&observation_end=${observationEnd}`;
 app.get("/data2", async (req, res) => {
   try {
@@ -48,29 +49,29 @@ app.get("/data2", async (req, res) => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Twilio credentials
-const accountSid = "";
-const authToken = "";
-const client = twilio(accountSid, authToken);
+// // Twilio credentials
+// const accountSid = process.env.TWILIO_ACCOUNT_SECRET;
+// const authToken = process.env.TWILIO_TOKEN_SECRET;
+// const client = twilio(accountSid, authToken);
 
-// Endpoint to send SMS
-app.post("/send-sms", (req, res) => {
-  const { phoneNumber, message } = req.body;
+// // Endpoint to send SMS
+// app.post("/send-sms", (req, res) => {
+//   const { phoneNumber, message } = req.body;
 
-  client.messages
-    .create({
-      body: message,
-      from: "8669387280",
-      to: phoneNumber,
-    })
-    .then(() => {
-      res.send("SMS sent successfully");
-    })
-    .catch((error) => {
-      console.error("Error sending SMS:", error);
-      res.status(500).send("Failed to send SMS");
-    });
-});
+//   client.messages
+//     .create({
+//       body: message,
+//       from: "8669387280",
+//       to: phoneNumber,
+//     })
+//     .then(() => {
+//       res.send("SMS sent successfully");
+//     })
+//     .catch((error) => {
+//       console.error("Error sending SMS:", error);
+//       res.status(500).send("Failed to send SMS");
+//     });
+// });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

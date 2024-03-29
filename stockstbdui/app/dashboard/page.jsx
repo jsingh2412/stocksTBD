@@ -45,7 +45,6 @@ const DashBoard = () => {
 
     fetchData();
   }, []);
-  console.log(data2);
   return (
     <div className="layout m-4">
       <div className="predictions-content">
