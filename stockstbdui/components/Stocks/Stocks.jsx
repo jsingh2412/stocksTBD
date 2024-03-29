@@ -163,13 +163,13 @@ const Stocks = ({ stock }) => {
         <NewsDisplay
           news_title={`News related to ${stockInformation.company}`}
           news_description="Description for this news article"
-          news_type="Fiance"
+          news_type="Finance"
           news_image="/assets/images/news-image.webp"
         />
         <NewsDisplay
           news_title={`News related to ${stockInformation.company}`}
           news_description="Description for this news article"
-          news_type="Fiance"
+          news_type="Finance"
           news_image="/assets/images/news-image.webp"
         />
       </div>
