@@ -25,15 +25,13 @@ app.get("/alphaData", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-console.log(alphaKey);
 
 const endpoint = "https://api.stlouisfed.org/fred/series/observations";
 const seriesId = "SP500";
 const apiKey = process.env.REACT_APP_S_P_CLIENT_SECRET;
 const fileType = "json";
-const observationStart = "2022-03-17";
-const observationEnd = "2023-03-17";
-console.log(apiKey);
+const observationStart = "2023-03-17";
+const observationEnd = "2024-03-29";
 const apiUrl = `${endpoint}?series_id=${seriesId}&api_key=${apiKey}&file_type=${fileType}&observation_start=${observationStart}&observation_end=${observationEnd}`;
 app.get("/data2", async (req, res) => {
   try {

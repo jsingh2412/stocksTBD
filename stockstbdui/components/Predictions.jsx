@@ -18,8 +18,8 @@ const Predictions = () => {
           stock_image="/assets/images/apple-logo.svg"
           stock_name="Apple"
           stock_ticker="AAPL"
-          stock_percentage="3.5%"
-          stock_suggestion="sell"
+          stock_percentage="0.60%"
+          stock_suggestion="buy"
         />
       </Link>
       <Link href={`/stock/MSFT`}>
@@ -27,7 +27,7 @@ const Predictions = () => {
           stock_image="/assets/images/Microsoft-logo.svg"
           stock_name="Microsoft"
           stock_ticker="MSFT"
-          stock_percentage="2.7%"
+          stock_percentage="1.3%"
           stock_suggestion="buy"
         />
       </Link>
@@ -37,7 +37,7 @@ const Predictions = () => {
           stock_name="Amazon"
           stock_ticker="AMZN"
           stock_percentage="1.2%"
-          stock_suggestion="sell"
+          stock_suggestion="buy"
         />
       </Link>
       <Link href={`/stock/EFX`}>
@@ -45,8 +45,8 @@ const Predictions = () => {
           stock_image="/assets/images/s&p500images/equifax.svg"
           stock_name="EQUIFAX"
           stock_ticker="EFX"
-          stock_percentage="7.5%"
-          stock_suggestion="buy"
+          stock_percentage="0.30%"
+          stock_suggestion="sell"
         />
       </Link>
     </div>

@@ -8,15 +8,15 @@ import NewsDisplay from "@components/News/NewsDisplay";
 import { stockInfo, allStocks } from "@app/fakeInfo";
 import { useEffect, useState } from "react";
 const axios = require("axios");
-import { connectMongoDB } from "@/backend/server/db/mongodb";
+//import { connectMongoDB } from "@/backend/server/db/mongodb";
 //Need to add Results
-import tickerPrediction from "../../backend/server/models/tickerPrediction";
+//import tickerPrediction from "../../backend/server/models/tickerPrediction";
 
 const getClosedValues = (data) => {
   const lows = [];
   for (let i = 0; i < data.length; i++) {
     const entryDate = data[i][0];
-    const closePrice = data[i][1]["4. close"];
+    const closePrice = parseFloat(data[i][1]["4. close"]).toFixed(2);
     const dateObj = {
       date: entryDate,
       value: closePrice,
@@ -45,6 +45,12 @@ const Stocks = ({ stock }) => {
     },
   ]);
   const [prediction, setPrediction] = useState(100.19);
+  const tempPredictions = [
+    { ticker: "AAPL", prediction: 172.49 },
+    { ticker: "MSFT", prediction: 415.57 },
+    { ticker: "AMZN", prediction: 180.89 },
+    { ticker: "EFX", prediction: 266.67 },
+  ];
 
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -89,6 +95,13 @@ const Stocks = ({ stock }) => {
   }, []);
   //useEffect to get the dynamically loaded information
   useEffect(() => {
+    const predictionInfo = tempPredictions.find(
+      (company) => company.ticker === stock
+    );
+    console.log("is this doing shit");
+    console.log(predictionInfo);
+    setPrediction(predictionInfo.prediction);
+
     const companyInfo = allStocks.find((company) => company.ticker === stock);
     if (companyInfo) {
       setStockInformation(companyInfo);
@@ -101,6 +114,9 @@ const Stocks = ({ stock }) => {
           <div className="flex-grow sm:pl-20 pl-5 basic_text">
             <h1 className="text-size">{stockInformation.ticker}</h1>
             <h2 className="text-size2">{stockInformation.company}</h2>
+          </div>
+          <div className="sm:text-7xl text-2xl pr-5 basic_text">
+            Current: {data.slice(-1)[0].value}
           </div>
           <div className="sm:text-7xl text-2xl pr-5 basic_text">
             Prediction: {prediction}
