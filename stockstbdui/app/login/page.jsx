@@ -10,9 +10,6 @@ import { GoogleSignInButton } from '@components/AuthButtons';
 import Link from "next/link";
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { options } from '@app/api/auth/[...nextauth]/route';
-import { getServerSession } from 'next-auth';
-import {redirect} from "next/navigation";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
@@ -21,17 +18,19 @@ const LogIn = () => {
 
   const router = useRouter();
 
-  const handleSubmit = async () => {
-    try{
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
       const res = await signIn("credentials", {
-        email, password,
+        email, password, redirect:false,
       });
 
       if(res.error) {
         setError("Invalid Credentials");
         return;
       }
-      router.push("/dashboard");
+      router.replace("/dashboard");
     } catch(error){
       console.log(error);
     }
@@ -57,6 +56,11 @@ const LogIn = () => {
                 </div>
               </div>
           </div>
+          { error && (
+            <div className='bg-red-500 text-white w-fit text-md py-1 px-3 rounded-md mt-2 self-center'>
+              {error}
+            </div>
+          )}
           <div className="flex items-center m-auto mt-3 text-base font-koho mb-3 text-white cursor-pointer"><span>Forgot your password? Click here!</span></div>
           <div className="flex gap-7 m-auto">
               <button onClick={handleSubmit} className="flex justify-center items-center w-56 h-16 text-primary-green text-2xl bg-white cursor-pointer rounded-lg font-koho font-bold">Login</button>
@@ -68,11 +72,6 @@ const LogIn = () => {
         </div>
         <GoogleSignInButton />
         </div>
-        { error && (
-            <div className='bg-red-500 text-white w-fit text-lg py-1 px-3 rounded-md mt-2 self-center'>
-              {error}
-            </div>
-          )}
         <div className='flex items-center mt-6'>
           <div className="w-28 border-t border-1 border-primary-green flex-grow mx-2"></div>
           <span className='text-xl font-koho font-semibold text-primary-green text-center'>New to StocksTBD?</span>

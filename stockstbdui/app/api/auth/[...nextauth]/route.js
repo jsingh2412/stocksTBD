@@ -3,7 +3,12 @@ import GoogleProvider from "next-auth/providers/google"
 import CredentialsProvider from "next-auth/providers/credentials";
 import { GoogleProfile } from "next-auth/providers/google";
 import { connectMongoDB } from "@backend/server/db/mongodb";
-import User from "mongoose";
+let User;
+try {
+  User = require("@backend/server/models/user").default;
+} catch (err) {
+  console.error("Error importing User model:", err);
+}
 //import bcrypt from "bcrypt";
 
 export const options = {

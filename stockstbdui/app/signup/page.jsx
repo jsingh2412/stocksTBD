@@ -106,7 +106,7 @@ const SignUp = () => {
               <button onClick={handleSubmit} className="flex justify-center items-center w-56 h-16 text-primary-green text-2xl bg-white cursor-pointer rounded-3xl font-koho font-bold">Sign Up</button>
           </div>
           { error && (
-            <div className='bg-red-500 text-white w-fit text-lg py-1 px-3 rounded-md mt-2 self-center'>
+            <div className='bg-red-500 text-white w-fit text-md py-1 px-3 rounded-md mt-2 self-center'>
               {error}
             </div>
           )}
