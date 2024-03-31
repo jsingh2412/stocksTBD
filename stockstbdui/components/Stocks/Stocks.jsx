@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 const axios = require("axios");
 import { connectMongoDB } from "@/backend/server/db/mongodb";
 //Need to add Results
-//import Results from "@/backend/server/models/results";
+import tickerPrediction from "../../backend/server/models/tickerPrediction";
 
 const getClosedValues = (data) => {
   const lows = [];
@@ -52,18 +52,22 @@ const Stocks = ({ stock }) => {
   //       // Connect to MongoDB
   //       await connectMongoDB();
 
-  //       // Query the database to find the document where the ticker is equal to "AAPL"
-  //       const result = await Results.findOne({ ticker: `${stock}` });
+  //       // Assuming stock is defined somewhere within the component
+  //       const ticker = stock;
 
+  //       // Query the database to find the document where the ticker is equal to the stock
+  //       const result = await tickerPrediction.findOne({ ticker });
+  //       console.log(result);
   //       // Extract the data you need from the result
-  //       setPrediciton(result);
+  //       //setPrediction(result);
   //     } catch (error) {
   //       console.error("Error fetching data:", error);
   //     }
   //   };
 
+  //   // Call fetchData inside useEffect
   //   fetchData();
-  // }, []);
+  // }, []); // Empty dependency array means this effect will run only once after the component mounts
 
   //need to do a useEffect to get real time stock data
   useEffect(() => {
