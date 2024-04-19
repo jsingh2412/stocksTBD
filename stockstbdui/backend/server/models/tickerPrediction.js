@@ -1,3 +1,10 @@
+/*
+*   tickerPrediction.js
+*   Nicolas Sidorenkov
+*   Date Created: 3/28/2024
+*   This defines the schema that will be used within the database that stores 
+*   the information of our predictions sorted by the company tickers.
+*/
 import mongoose, {Schema, models} from "mongoose";
 
 const tickerPredictionSchema = new Schema(

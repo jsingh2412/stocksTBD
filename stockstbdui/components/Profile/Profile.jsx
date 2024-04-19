@@ -1,3 +1,6 @@
+/*
+
+*/
 "use client";
 import FavoriteStock from "../FavoriteStock";
 import { useSession } from "next-auth/react";
@@ -9,7 +12,7 @@ import Favorites from "@components/Favorites";
 const Profile = () => {
   const { data: session } = useSession();
   // The user name and pfp is updated using the data provided by the session.
-  // favorites are still hard coded.
+  // Favorites are imported directly from the components
   if (session && session.user) {
     return (
       <div className="max-h-full w-full">
@@ -24,7 +27,7 @@ const Profile = () => {
       </div>
     );
   }
-  // a default user preview for when a user is not signed in
+  // a default user preview for when a user is not signed in, used for testing prior to the sessions being created
   return (
     <div className="max-h-full w-full flex-col">
       <div className="text-4xl flex h-1/2 font-semibold bg-secondary-green w-full font-koho text-white pl-5 pt-10">
