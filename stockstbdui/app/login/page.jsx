@@ -1,8 +1,26 @@
 /*
-// This is the page for the login page, appears when clicking login on the top right of our website.
-// The page is responsible for handling login along with redirecting users for oAuth logins.
-// It has a link for sign up at the bottom if the user needs it and the credentials logins
-// are authenticated by a mysql database that is temporarily locally hosted.
+* /login/page.jsx
+* Jagroop Singh
+* Date Created: 11/5/2023
+* This is the page for the login page, appears when clicking login on the top right of our website.
+* The page is responsible for handling login along with redirecting users for oAuth logins.
+* It has a link for sign up at the bottom if the user needs it and the credentials logins
+* are authenticated by a mysql database that is temporarily locally hosted.
+*
+* Date Changed: 1/20/2024
+* Change formatting of page to make use of tailwind css instead of normal css.
+* Date Changed: 1/27/2024
+* Change page so that it is only responsible for login and not both login/signup. 
+* Date Changed: 2/10/2024
+* Add the functionality to handle GoogleOAuth login through next-auth.
+* Date Changed: 2/24/2024
+* UI changes for improving the look of page.
+* Date Changed: 3/24/2024
+* Addition of credential sign ins with the use of mySQL(not fully functioning).
+* Date Changed: 3/29/2024
+* Change to mongoDB instead of mySQL, credential sign ins are almost fully functioning(error testing needed).
+* Date Changed: 3/31/2024
+* Fully tested and functioning MongoDB sign in with the use of credentials.
 */
 'use client'
 import React, { useState } from 'react';
@@ -12,16 +30,21 @@ import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
 const LogIn = () => {
+  // set of states to keep track of variables needed for signin
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  // initalize router
   const router = useRouter();
 
+  // this is incharge of handling credentials signins by redirecting to the next-auth credentials implementation
+  // if successfull the user is redirected to the dashboard
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
+      // signIn has the type of signin passed by "credentials", email password and an option redirect are passed into this for next-auth
       const res = await signIn("credentials", {
         email, password, redirect:false,
       });

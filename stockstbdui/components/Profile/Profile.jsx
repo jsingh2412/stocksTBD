@@ -3,6 +3,7 @@ import FavoriteStock from "../FavoriteStock";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import defaultPfp from "@public/assets/images/default-user-icon.png";
+import Favorites from "@components/Favorites";
 
 //Profile Component
 const Profile = () => {
@@ -15,7 +16,7 @@ const Profile = () => {
         <div className="text-4xl font-semibold h-1/2 bg-secondary-green w-full font-koho text-white flex-row ml-5">
           <Image src={session.user.image} width={125} height={125} />
           <div>{session.user.name}</div>
-          <Favorites height="250px" width="100px" />
+          <Favorites/>
         </div>
         <div className="h-1/2 bg-white w-full font-koho">
           <div>User Settings</div>

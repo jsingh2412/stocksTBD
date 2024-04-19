@@ -1,6 +1,14 @@
 /*
-// This is the page for the login page, appears when clicking login on the top right of our website.
-// Page will handle both logging in and sign up. Auth still needs to be done.
+* /signup/page.jsx
+* Jagroop Singh
+* Date Created: 2/10/2024
+* This is the page for the login page, appears when clicking login on the top right of our website.
+* Page will handle both logging in and sign up. Auth still needs to be done.
+*
+* Date Changed: 2/24/2024
+* Adjusting of the inputs to the necessary fields to handle sign ups.
+* Date Changed: 3/29/2024
+* Fully functioning implementation of sign up with the use of MongoDB as backend.
 */
 'use client'
 import React, { useState } from 'react';
@@ -8,6 +16,7 @@ import Link from "next/link";
 import { useRouter } from 'next/navigation';
 
 const SignUp = () => {
+  // initialization of required fields
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,16 +25,19 @@ const SignUp = () => {
   const router = useRouter();
 
   const handleSubmit = async () => {
+    //checks that when submitted all fields are provided, if not the user is made aware that all fields are required to sign up.
     if(!name || !email || !password || !repassword){
       setError("All fields are required.");
       return;
     }
+    //checks that the passwords provided match, if they do not the user is made aware that they need to match.
     if(password!=repassword){
       setError("Passwords must match.")
       return;
     }
 
     try {
+      //attempts to search for the database with the email provided to see if the user already exists within our database
       const res1 = await fetch("api/userExists", {
         method: "POST",
         headers: {
@@ -35,12 +47,13 @@ const SignUp = () => {
       });
 
       const {user} = await res1.json();
-
+      //if the user is found by the call to our userExists query tells the user an account already exists with the email.
       if (user){
         setError("User already exists.");
         return
       }
-
+      // After assuring the user does not already exist we make a call to our register api endpoint, providing it the name email and password.
+      // This will create the user in the database.
       const res = await fetch("api/register", {
         method:"POST",
         headers: {
@@ -52,7 +65,7 @@ const SignUp = () => {
           password,
         }),
       });
-
+      //if the user is succesfully created we redirect the user to login and assure all fields are nullified.
       if (res.ok) {
         setName("");
         setEmail("");
