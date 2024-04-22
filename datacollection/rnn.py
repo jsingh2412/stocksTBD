@@ -1,3 +1,11 @@
+/*
+* rnn.py
+* stocksTBD
+* Date Created: 11/9/2023
+* RNN model that is not being used in any calculations but that we considered using in the project.
+* 
+*/
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
