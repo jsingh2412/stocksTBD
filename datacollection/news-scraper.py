@@ -1,3 +1,10 @@
+#script used to scrape data from yahoo news.
+#used when we considered performing sentiment analysis for our predictions.
+
+#Author: Sean Brady
+
+#Date created: Oct 8, 2023
+
 import requests
 import bs4
 from selenium import webdriver
