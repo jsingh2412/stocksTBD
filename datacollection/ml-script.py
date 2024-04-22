@@ -1,3 +1,8 @@
+#A file that when given a ticker symbol as input will pull the data for that company, process it, and based off of the model titled
+#exported_model, make a prediction for tomorrows closing stock price
+
+#Author: Sean Brady
+#Date Created: Mar 28, 2024
 import tensorflow as tf
 import sys
 from datetime import datetime, timedelta
