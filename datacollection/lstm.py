@@ -1,3 +1,10 @@
+/*
+* lstm.py
+* stocksTBD
+* Date Created: 3/1/2024
+* LSTM model that is not being used in the project but that we considered adding. It plots stock price over time and makes a prediction.
+*/
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
