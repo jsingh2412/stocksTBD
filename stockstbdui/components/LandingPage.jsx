@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const LandingPage = () => {
   return (
@@ -16,9 +17,11 @@ const LandingPage = () => {
           <div className="basic_text_italic absolute inset-0 flex  flex-col justify-center items-center">
             <h1 className="text-9xl sm:text-11xl">stocksTBD</h1>
             <p>daily stock price predictions</p>
-            <button className="bg-primary-gray p-3 pl-5 pr-5 basic_text_black text-lg mt-2 text-center">
-              Join
-            </button>
+            <Link href="/signup">
+              <button className="bg-primary-gray p-3 pl-5 pr-5 basic_text_black text-lg mt-2 text-center">
+                Join
+              </button>
+            </Link>
           </div>
         </div>
       </div>
