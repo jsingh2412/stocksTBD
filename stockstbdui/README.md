@@ -6,15 +6,7 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-things you may need to install before being able to npm run dev:
-    npm install next @visx/visx next-auth mysql2 bcrypt mongoose mongodb
+^ not working? make sure to run npm install
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
