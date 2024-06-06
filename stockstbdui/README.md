@@ -6,6 +6,7 @@ First, run the development server:
 
 ```bash
 npm run dev
+```
 ^ not working? make sure to run npm install
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
