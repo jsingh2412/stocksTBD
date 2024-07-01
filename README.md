@@ -14,4 +14,4 @@ Link to the Figma design: https://www.figma.com/file/b9WHs28FqfAnPb3DhtI8Jj/stoc
 
 ### Built with
 Next.js
-...some python ml library
+
